@@ -1,0 +1,14 @@
+mat-toolbar {
+    color: #ffffff;
+    background-color: #111D4A;
+    width: 100%;
+}
+
+.menu-item-buttons {
+    position: relative;
+    margin-left: 58%;
+}
+
+button:hover {
+    color: #FF6700;
+}

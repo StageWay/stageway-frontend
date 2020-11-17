@@ -1,0 +1,44 @@
+<mat-toolbar fxLayout="row">
+    <span [routerLink]="['/app-welcome-view']">StageWay</span>
+    <span class="menu-item-buttons">
+    <button mat-button fxHide.xs [routerLink]="['/app-dashboard-view']">
+        <mat-icon class="icon">home</mat-icon>
+        Dashboard
+    </button>
+    <button mat-button fxHide.xs [routerLink]="['/app-profile-view']">
+        <mat-icon class="icon">face</mat-icon>
+        Profile
+    </button>
+    <button mat-button fxHide.xs [routerLink]="['']">
+        <mat-icon class="icon">live_help</mat-icon>
+        Guide
+    </button>
+    <app-auth-button></app-auth-button>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-container>
+            <button mat-button fxHide.xs [routerLink]="['/app-dashboard-view']">
+                <mat-icon class="icon">home</mat-icon>
+                Dashboard
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-button fxHide.xs [routerLink]="['/app-profile-view']">
+                <mat-icon class="icon">face</mat-icon>
+                Profile
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-button fxHide.xs [routerLink]="['']">
+                <mat-icon class="icon">live_help</mat-icon>
+                Guide
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-button fxHide.xs [routerLink]="['/app-welcome-view']">
+                <mat-icon class="icon">login</mat-icon>
+                login
+            </button>
+        </ng-container>
+    </mat-menu>
+    </span>
+</mat-toolbar>
