@@ -4,14 +4,12 @@
     color: #111D4A;
 }
 
-mat-grid-list {
-    flex-wrap: wrap;
-}
-
 .example-card {
     max-width: 400px;
     background-color: #CEE5F2;
     color: #111D4A;
+    margin-right: 50px;
+    margin-bottom: 50px;
 }
 
 .example-card:hover {
@@ -27,16 +25,6 @@ mat-grid-list {
 .location-lable {
     color: #0A7085;
     font-style: italic;
-}
-
-.button-favorite {
-    color: #0a7085;
-    margin-left: 75px;
-}
-
-.button-delete {
-    color: #FF6700;
-    margin-left: 2px;
 }
 
 .button-create-stage {
