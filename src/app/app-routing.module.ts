@@ -6,6 +6,7 @@ import { AuthButtonComponent } from './auth0/auth-button/auth-button.component';
 import { ProfileViewComponent } from './views/profile-view/profile-view.component';
 import { WelcomeViewComponent } from './views/welcome-view/welcome-view.component';
 import { StageBrowseViewComponent } from './views/stage-browse-view/stage-browse-view.component';
+import { GuideViewComponent } from "./views/guide-view/guide-view.component";
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'app-profile-view', component: ProfileViewComponent },
   { path: 'app-welcome-view', component: WelcomeViewComponent},
   { path: 'app-stage-browse-view', component: StageBrowseViewComponent},
+  { path: 'app-guide-view', component: GuideViewComponent},
   //{ path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
 

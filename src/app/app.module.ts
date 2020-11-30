@@ -12,6 +12,7 @@ import { ProfileViewComponent } from "./views/profile-view/profile-view.componen
 import { FooterViewComponent } from "./views/footer-view/footer-view.component";
 import { AuthButtonComponent } from "./auth0/auth-button/auth-button.component";
 import { WelcomeViewComponent } from "./views/welcome-view/welcome-view.component";
+import { GuideViewComponent } from "./views/guide-view/guide-view.component";
 import { StageBrowseViewComponent } from "./views/stage-browse-view/stage-browse-view.component";
 import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-detail-dialog/stage-detail-dialog.component";
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
@@ -42,6 +43,7 @@ import { AppRoutingModule } from './app-routing.module';
     FooterViewComponent,
     AuthButtonComponent,
     WelcomeViewComponent,
+    GuideViewComponent,
     StageBrowseViewComponent,
     StageDetailDialogComponent,
     StageCreateDialogComponent,

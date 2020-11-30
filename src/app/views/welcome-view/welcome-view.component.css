@@ -1,25 +1,38 @@
-.middle {
+mat-grid-list {
+    margin-bottom: 100px;
+}
+
+.grid-field-left {
+    background: #111D4A;
+    border-radius: 0px 0px 60px 0px;
+    color: #ffffff;
+}
+
+.welcome-img {
+    margin-top: 100px;
+}
+
+.welcome-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-image: url("/assets/images/welcome_image.PNG");
-    background-size: auto; */
-    background-repeat: none;
-    text-align: center;
+    margin-top: 10px;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
 }
 
-hr {
-    margin: auto;
-    width: 60%;
-    color: darkgray;
+.browseViewBtn {
+    background-color: #FF6700;
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: large;
 }
 
-p {
-    color: #111D4A;
+.coachingViewBtn {
+    background-color: #0A7085;
+    color: white;
+    font-size: large;
 }
 
-h1,
-h3 {
-    color: #0A7085;
+h2 {
+    color: #ffffff;
 }

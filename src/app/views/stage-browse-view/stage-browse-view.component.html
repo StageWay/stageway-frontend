@@ -1,20 +1,19 @@
 <div class="stage-container">
-    <button (click)="openStageCreateDialog()" class=button-create-stage>Create Stage</button>
-    <h3>Stages</h3>
     <div fxLayout="row wrap">
-        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stage of stageData.stages" (click)="openStageDetailDialog()" class="example-card">
+        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" (click)="openStageDetailDialog()" class="example-card">
             <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>{{stage.stageTitle}}</mat-card-title>
-                <mat-card-subtitle>{{stage.stageSubtitle}}</mat-card-subtitle>
+                <div mat-card-avatar src="{{stageItem.stageCompanyImage}}" class="example-header-image"></div>
+                <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
+                <mat-card-subtitle>{{stageItem.stageSubtitle}}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="{{stage.stageImage}}" alt="Photo of a Shiba Inu">
+            <!-- <img mat-card-image src="{{stageItem.stageImage}}" alt="Photo of Stage"> -->
+            <img mat-card-image src="/assets/images/welcome_image.PNG" alt="Photo of Stage">
             <mat-card-content>
                 <p>
-                    {{stage.stageSummary}}
+                    {{stageItem.stageSummary}}
                 </p>
                 <p class="location-lable">
-                    {{stage.stageLocation}}
+                    {{stageItem.stageLocation}}
                 </p>
             </mat-card-content>
         </mat-card>

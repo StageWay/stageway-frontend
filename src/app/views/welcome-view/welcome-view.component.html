@@ -1,10 +1,13 @@
-<div class="welcome-page">
-    <div class="middle">
-        <h1>COMING SOON</h1>
-        <h2>ShowCase</h2>
-        <hr>
-        <h3>Vision</h3>
-        <p>Wir möchten Lehrabgänger*innen die Möglichkeit bieten, ihre Fähigkeiten und Kompetenzen zu erweitern und dadurch die optimalen Bedingungen schaffen, um sich im zukünftigen Berufsleben zu entfalten.</p>
-        <app-auth-button></app-auth-button>
-    </div>
-</div>
+<mat-grid-list cols="2" rowHeight="4:3">
+    <mat-grid-tile class="grid-field-left">
+        <div class="welcome-text">
+            <h2>Starte mit StageWay den nächsten Schritt in deine Zukunft</h2>
+            <p>Mit Stageway hast du die einmalige Chance, deinen Horizont zu erweitern und in ein neues Unternehmen einzusteigen.</p>
+            <a class="browseViewBtn" mat-raised-button [routerLink]="['/app-dashboard-view']">Stages erkunden</a>
+            <a class="coachingViewBtn" mat-raised-button routerLink=".">Coaching?</a>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img class="welcome-img" src="/assets/images/welcome_img.PNG" alt="Welcome Image" width="523" height="415">
+    </mat-grid-tile>
+</mat-grid-list>

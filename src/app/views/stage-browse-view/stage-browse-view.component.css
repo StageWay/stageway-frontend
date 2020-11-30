@@ -2,11 +2,12 @@
     margin-left: 50px;
     margin-right: 50px;
     color: #111D4A;
+    margin-top: 50px;
 }
 
 .example-card {
     max-width: 400px;
-    background-color: #CEE5F2;
+    background-color: #F3F5F7;
     color: #111D4A;
     margin-right: 50px;
     margin-bottom: 50px;
@@ -25,8 +26,4 @@
 .location-lable {
     color: #0A7085;
     font-style: italic;
-}
-
-.button-create-stage {
-    margin-top: 20px;
 }

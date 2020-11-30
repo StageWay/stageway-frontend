@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StageDetailDialogComponent } from './stage-detail-dialog/stage-detail-dialog.component';
-import { StageCreateDialogComponent } from "./stage-create-dialog/stage-create-dialog.component";
+import { StageService } from './stage.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,8 +12,12 @@ import { HttpClient } from '@angular/common/http';
 export class StageBrowseViewComponent implements OnInit {
   stageData: any;
 
-  constructor(private dialog: MatDialog, private httpClient: HttpClient) { 
+  constructor(private dialog: MatDialog, private httpClient: HttpClient, private service:StageService) { 
   }
+
+  StageService 
+
+  StageList:any=[];
 
 
   openStageDetailDialog() {
@@ -26,22 +30,15 @@ export class StageBrowseViewComponent implements OnInit {
     this.dialog.open(StageDetailDialogComponent, dialogConfig);
 
   }
-
-  openStageCreateDialog() {
-
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(StageCreateDialogComponent, dialogConfig);
-
+  
+  ngOnInit() {
+    this.refreshStageList();
   }
 
-  ngOnInit() {
-    this.httpClient.get<any>("assets/stages/stages.json").subscribe((data)=>
-    this.stageData = data
-  )
+  refreshStageList(){
+    this.service.getStageList().subscribe(data=>{
+        this.StageList=data;
+    });
   }
 
 }
