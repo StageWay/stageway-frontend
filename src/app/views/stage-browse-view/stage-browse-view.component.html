@@ -2,7 +2,8 @@
     <div fxLayout="row wrap">
         <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" (click)="openStageDetailDialog()" class="example-card">
             <mat-card-header>
-                <div mat-card-avatar src="{{stageItem.stageCompanyImage}}" class="example-header-image"></div>
+                <div mat-card-avatar class="example-header-image"></div>
+                <!-- <div mat-card-avatar src="{{stageItem.stageCompanyImage}}" class="example-header-image"></div> -->
                 <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
                 <mat-card-subtitle>{{stageItem.stageSubtitle}}</mat-card-subtitle>
             </mat-card-header>

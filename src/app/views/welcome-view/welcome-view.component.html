@@ -1,13 +1,33 @@
-<mat-grid-list cols="2" rowHeight="4:3">
-    <mat-grid-tile class="grid-field-left">
-        <div class="welcome-text">
-            <h2>Starte mit StageWay den nächsten Schritt in deine Zukunft</h2>
-            <p>Mit Stageway hast du die einmalige Chance, deinen Horizont zu erweitern und in ein neues Unternehmen einzusteigen.</p>
-            <a class="browseViewBtn" mat-raised-button [routerLink]="['/app-dashboard-view']">Stages erkunden</a>
-            <a class="coachingViewBtn" mat-raised-button routerLink=".">Coaching?</a>
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
+<div class="flex-container-top">
+    <div class="flex-field-left">
+        <h2>Starte mit StageWay den nächsten Schritt in deine Zukunft</h2>
+        <p>Mit Stageway hast du die einmalige Chance, deinen Horizont zu erweitern und in ein neues Unternehmen einzusteigen.</p>
+        <a class="browseViewBtn" mat-raised-button [routerLink]="['/app-dashboard-view']">Stages erkunden</a>
+        <a class="coachingViewBtn" mat-raised-button routerLink=".">Coaching?</a>
+    </div>
+    <div class="flex-field-right">
         <img class="welcome-img" src="/assets/images/welcome_img.PNG" alt="Welcome Image" width="523" height="415">
-    </mat-grid-tile>
-</mat-grid-list>
+    </div>
+</div>
+<div class="flex-container-bottom">
+    <div class="flex-field-benefits">
+        <img class="plus-img" src="/assets/images/Icon_plus.png" alt="Plus Image" width="140" height="126">
+        <h3>Vorteile</h3>
+        <p>Schaffe für dich optimale Grundvoraussetzungen für deine berufliche Zukunft, indem du:</p>
+        <p>Einblicke in neue Branchen oder Berufsrichtungen erhältst</p>
+        <p>Deine Fähigkeiten und Kompetenzen erweiterst</p>
+        <p>Neue Arbeitsatmosphären erlebst</p>
+        <p>Vom Coaching der Stadt Zürich profitieren kannst</p>
+    </div>
+    <div class="flex-field-info">
+        <img class="info-img" src="/assets/images/Icon_info.png" alt="Info Image" width="140" height="126">
+        <h3>Über uns:</h3>
+        <p>StageWay ist ein Gemeinschaftsprojekt der Stadt Zürich, Swiss Re, Swisscom und der Zürcher Kantonalbank. Das Ziel ist es, den Berufseinstieg für Lehrabgänger*innen anhand von neuen Chancen zu erleichtern.</p>
+        <p>Die beteiligten Unternehmen bieten auf einer selbst entwickelten Plattform Stages (Arbeitseinsätze) mit einer Dauer von mindestens 6 Monaten an. Damit wird die Möglichkeit geboten, einfacher in einer anderen Branche oder einer neuen Berufsrichtung Fuss zu
+            fassen sowie eine neue Firmenkultur kennenzulernen. </p>
+    </div>
+    <div class="flex-field-partners">
+        <h3>Partner</h3>
+        <img class="info-img" src="/assets/images/Logo_Partner.png" alt="Info Image" width="732" height="82">
+    </div>
+</div>

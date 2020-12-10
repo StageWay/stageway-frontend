@@ -11,15 +11,16 @@
     color: #111D4A;
     margin-right: 50px;
     margin-bottom: 50px;
+    box-shadow: -3px 6px 6px 0px rgba(176, 164, 176, 1);
+    transition: all .3s ease-in-out;
 }
 
 .example-card:hover {
-    opacity: 0.5;
-    cursor: pointer;
+    box-shadow: -3px 18px 20px 0px rgb(17, 29, 74);
 }
 
 .example-header-image {
-    /* background-image: url('{{stage.stageCompanyImage}}'); */
+    background-image: url('/assets/images/Swisscom_logo.png');
     background-size: cover;
 }
 

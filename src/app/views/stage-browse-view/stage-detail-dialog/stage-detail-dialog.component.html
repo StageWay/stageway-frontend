@@ -1,29 +1,35 @@
 <h2 mat-dialog-title>ABC Engineer</h2>
+<h3>StageWay Application Team</h3>
 <mat-dialog-content class="mat-typography">
-    <h3>Zusammenfassung</h3>
-    <p>Als “ABC Engineer” bist du Teil eines Entwicklungsteams und zuständig für die Entwicklung und den Betrieb der “XYZ Tools” unseres Datacenters.</p>
+    <div class="flex-container">
+        <div class="left-box">
+            <h3>Zusammenfassung</h3>
+            <p>Als “ABC Engineer” bist du Teil eines Entwicklungsteams und zuständig für die Entwicklung und den Betrieb der “XYZ Tools” unseres Datacenters.</p>
 
-    <hr>
+            <h3>Aufgaben</h3>
+            <p>Unsere „XYZ Tools“, die in der StageWay Application Cloud produziert werden, stellen die Verbindung zwischen den verschiedenen internen sowie externen Plattformen und Services her. Die Tools ermöglichen… Diese Stage bietet die Chance… In deinem
+                Arbeitsalltag bewältigst du Tätigkeiten, wie …</p>
 
-    <h3>Aufgaben</h3>
-    <p>Unsere „XYZ Tools“, die in der StageWay Application Cloud produziert werden, stellen die Verbindung zwischen den verschiedenen internen sowie externen Plattformen und Services her. Die Tools ermöglichen… Diese Stage bietet die Chance… In deinem Arbeitsalltag
-        bewältigst du Tätigkeiten, wie …</p>
+            <h3>Fähigkeiten</h3>
+            <p>Du hast deine Lehre abgeschlossen und bist auf der Suche nach einer spannenden und abwechslungsreicher Herausforderung in einer anderen Firma.</p>
 
-    <hr>
+            <h3>Vorteile &amp; Chancen</h3>
+            <p>Swiss Re: Du hast die Möglichkeit ein grosses Netzwerk im internationalen Raum zu bilden und erhälst einen spannenden Einblick in die Welt der Rückversichung.</p>
+        </div>
+        <div class="right-box">
+            <h3>Kontakt</h3>
+            <p>test.firma@domain.ch</p>
+            <mat-divider></mat-divider>
+            <!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
+            <p>Are you in Contact with Coaching?</p>
+            <!-- <mat-checkbox [(ngModel)]="checked" ngInit="checked=true">Yes</mat-checkbox> -->
 
-    <h3>Fähigkeiten</h3>
-    <p>Du hast deine Lehre abgeschlossen und bist auf der Suche nach einer spannenden und abwechslungsreicher Herausforderung in einer anderen Firma.</p>
-
-    <hr>
-
-    <h3>Vorteile &amp; Chancen</h3>
-    <p>Swiss Re: Du hast die Möglichkeit ein grosses Netzwerk im internationalen Raum zu bilden und erhälst einen spannenden Einblick in die Welt der Rückversichung.</p>
-
-    <hr>
-
-    <h3>Kontakt</h3>
-    <p>test.firma@domain.ch</p>
-
+            <!-- <div *ngIf="checked">
+                Yey Checked
+            </div> -->
+            <button mat-raised-button class="applyBtn">starte Bewerbung</button>
+        </div>
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions alinge="end">
     <button mat-button mat-dialog-close>Cancel</button>

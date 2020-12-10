@@ -7,6 +7,7 @@ import { ProfileViewComponent } from './views/profile-view/profile-view.componen
 import { WelcomeViewComponent } from './views/welcome-view/welcome-view.component';
 import { StageBrowseViewComponent } from './views/stage-browse-view/stage-browse-view.component';
 import { GuideViewComponent } from "./views/guide-view/guide-view.component";
+import { CoachingViewComponent } from './views/coaching-view/coaching-view.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'app-welcome-view', component: WelcomeViewComponent},
   { path: 'app-stage-browse-view', component: StageBrowseViewComponent},
   { path: 'app-guide-view', component: GuideViewComponent},
+  { path: 'app-coaching-view', component: CoachingViewComponent},
+
   //{ path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
 

@@ -1,4 +1,21 @@
-hr {
-    margin-bottom: 5px;
-    color: darkgray;
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+    margin: 0px;
+}
+
+.flex-container>.left-box {
+    width: 70%;
+    margin-right: 30px;
+}
+
+.flex-container>.right-box {
+    width: 30%;
+}
+
+.applyBtn {
+    background-color: #0A7085;
+    color: white;
+    font-size: large;
 }

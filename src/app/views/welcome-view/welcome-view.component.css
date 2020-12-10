@@ -1,23 +1,43 @@
-mat-grid-list {
-    margin-bottom: 100px;
+.flex-container-top {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+    margin: 0px;
+    margin-bottom: 25px;
 }
 
-.grid-field-left {
+.flex-container-bottom {
+    flex-direction: column;
+    height: 100px;
+    text-align: center;
+}
+
+.flex-field-left {
+    color: #ffffff;
+    text-align: center;
+    padding: 80px;
+}
+
+.flex-container-top>.flex-field-left {
     background: #111D4A;
     border-radius: 0px 0px 60px 0px;
-    color: #ffffff;
+    width: 50%;
+    margin-right: 30px;
+}
+
+.flex-field-right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-container-top>.flex-field-right {
+    background: #ffffff;
+    width: 50%;
 }
 
 .welcome-img {
     margin-top: 100px;
-}
-
-.welcome-text {
-    position: absolute;
-    margin-top: 10px;
-    top: 40%;
-    left: 40%;
-    transform: translate(-40%, -40%);
 }
 
 .browseViewBtn {
@@ -31,6 +51,24 @@ mat-grid-list {
     background-color: #0A7085;
     color: white;
     font-size: large;
+}
+
+.flex-field-benefits {
+    color: #111D4A;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+
+.flex-field-info {
+    color: #111D4A;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 60px;
+}
+
+.flex-field-partners {
+    margin-top: 80px;
 }
 
 h2 {
