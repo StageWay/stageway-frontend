@@ -30,7 +30,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper'; 
-import {MatCheckboxModule} from '@angular/material/checkbox'; 
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
@@ -74,6 +75,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatInputModule,
     MatStepperModule,
     MatCheckboxModule,
+    MatRadioModule,
 
     // Auth0 connection
     AuthModule.forRoot({

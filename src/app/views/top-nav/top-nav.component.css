@@ -2,8 +2,9 @@ mat-toolbar {
     color: #ffffff;
     background-color: #111D4A;
     width: 100%;
-    height: 12%;
+    height: 14%;
     font-family: 'Share', bold;
+    display: inline-block;
 }
 
 #navItem {

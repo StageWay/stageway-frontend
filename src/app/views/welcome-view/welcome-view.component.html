@@ -1,12 +1,14 @@
 <div class="flex-container-top">
     <div class="flex-field-left">
-        <h2>Starte mit StageWay den nächsten Schritt in deine Zukunft</h2>
-        <p>Mit Stageway hast du die einmalige Chance, deinen Horizont zu erweitern und in ein neues Unternehmen einzusteigen.</p>
-        <a class="browseViewBtn" mat-raised-button [routerLink]="['/app-dashboard-view']">Stages erkunden</a>
-        <a class="coachingViewBtn" mat-raised-button routerLink=".">Coaching?</a>
+        <div class="welcome-text">
+            <h2>Starte mit StageWay den nächsten Schritt in deine Zukunft</h2>
+            <p>Mit Stageway hast du die einmalige Chance, deinen Horizont zu erweitern und in ein neues Unternehmen einzusteigen.</p>
+            <a class="browseViewBtn" mat-raised-button [routerLink]="['/app-dashboard-view']">Stages erkunden</a>
+            <a class="coachingViewBtn" mat-raised-button [routerLink]="['/app-coaching-view']">Coaching?</a>
+        </div>
     </div>
     <div class="flex-field-right">
-        <img class="welcome-img" src="/assets/images/welcome_img.PNG" alt="Welcome Image" width="523" height="415">
+        <img class="welcome-img" src="/assets/images/Illustation-StageWay-Startpage.png" alt="Welcome Image" width="523" height="415">
     </div>
 </div>
 <div class="flex-container-bottom">
@@ -14,10 +16,12 @@
         <img class="plus-img" src="/assets/images/Icon_plus.png" alt="Plus Image" width="140" height="126">
         <h3>Vorteile</h3>
         <p>Schaffe für dich optimale Grundvoraussetzungen für deine berufliche Zukunft, indem du:</p>
-        <p>Einblicke in neue Branchen oder Berufsrichtungen erhältst</p>
-        <p>Deine Fähigkeiten und Kompetenzen erweiterst</p>
-        <p>Neue Arbeitsatmosphären erlebst</p>
-        <p>Vom Coaching der Stadt Zürich profitieren kannst</p>
+        <ul>
+            <li>Einblicke in neue Branchen oder Berufsrichtungen erhältst</li>
+            <li>Deine Fähigkeiten und Kompetenzen erweiterst</li>
+            <li>Neue Arbeitsatmosphären erlebst</li>
+            <li>Vom Coaching der Stadt Zürich profitieren kannst</li>
+        </ul>
     </div>
     <div class="flex-field-info">
         <img class="info-img" src="/assets/images/Icon_info.png" alt="Info Image" width="140" height="126">

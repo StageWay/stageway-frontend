@@ -1,33 +1,56 @@
-<h2 mat-dialog-title>ABC Engineer</h2>
-<h3>StageWay Application Team</h3>
+<h2 class="mat-dialog-title">ABC Engineer</h2>
+<p class="mat-dialog-subtitle">StageWay Application Team</p>
 <mat-dialog-content class="mat-typography">
     <div class="flex-container">
         <div class="left-box">
-            <h3>Zusammenfassung</h3>
-            <p>Als “ABC Engineer” bist du Teil eines Entwicklungsteams und zuständig für die Entwicklung und den Betrieb der “XYZ Tools” unseres Datacenters.</p>
+            <p>"Wir helfen da weiter, wo Ihr IT-Service endet", heisst das Motto des kompetenten Teams, das im IT Support die technische und fachliche Unterstützung der ratsuchenden Kunden übernimmt. Mit unserer Dienstleistungs-Philosophie erzielen wir höchste
+                Zufriedenheit bei den Kunden und den nachgelagerten Supporteinheiten. </p>
 
-            <h3>Aufgaben</h3>
-            <p>Unsere „XYZ Tools“, die in der StageWay Application Cloud produziert werden, stellen die Verbindung zwischen den verschiedenen internen sowie externen Plattformen und Services her. Die Tools ermöglichen… Diese Stage bietet die Chance… In deinem
-                Arbeitsalltag bewältigst du Tätigkeiten, wie …</p>
+            <h3>Tätigkeiten</h3>
+            <p>Der User Service Desk stellt den Betrieb des redfox Arbeitsplatzes für die gesamte Zürcher Kantonalbank und deren Tochtergesellschaften sicher. Zudem ist er die Schnittstelle für sämtliche Anwender mit IT-Incidents. Nach einer Grundausbildung
+                kannst du dein Team unterstützen, den gesamten Incident-Prozess sicherzustellen. Die Bearbeitung der vielfältigen Kundenanfragen wird ergänzt mit Schulungen von Mitarbeitenden und Kunden, und machen dein Aufgabengebiet abwechslungsreich
+                und spannend. </p>
 
-            <h3>Fähigkeiten</h3>
-            <p>Du hast deine Lehre abgeschlossen und bist auf der Suche nach einer spannenden und abwechslungsreicher Herausforderung in einer anderen Firma.</p>
+            <h3>Profil</h3>
+            <p>Abgeschlossene Kaufmännische / Informatik Ausbildung EFZ - Freude an komplexen und technischen Aufgaben - Vernetzers Denken - Offenheit & Teamfähigkeit - Mut & Engagement
+            </p>
 
-            <h3>Vorteile &amp; Chancen</h3>
-            <p>Swiss Re: Du hast die Möglichkeit ein grosses Netzwerk im internationalen Raum zu bilden und erhälst einen spannenden Einblick in die Welt der Rückversichung.</p>
+            <h3>Das können wir bieten</h3>
+            <p>Friendly Workspace - Personalkonditionen auf Bankgeschäfte - günstige & gesund Verpflegung in unseren Personalrestaurants - ZVV-Bonuspass
+            </p>
         </div>
         <div class="right-box">
-            <h3>Kontakt</h3>
-            <p>test.firma@domain.ch</p>
+            <h3>Allgemeines</h3>
+            <p class="company-lable">Zürcher Kantonalbank</p>
+            <p class="location-lable">Neue Hard 9, 8005 Zürich</p>
+            <p class="stage-startDate-lable">Start ab: 04.01.21</p>
+            <h3>Fragen?</h3>
+            <p class="contact-name-lable">Maria Muster</p>
+            <p class="contact-tel-lable">+41 79 333 33 33</p>
+            <p class="contact-mail-lable">bewerbungs.frage@firma.com</p>
+            <h3>Coaching</h3>
+            <p class="coching-describtion-lable">Entdecke das <a [routerLink]="['/app-coaching-view']">Coaching Angebot</a> der Stadt Zürich.
+            </p>
             <mat-divider></mat-divider>
-            <!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
-            <p>Are you in Contact with Coaching?</p>
-            <!-- <mat-checkbox [(ngModel)]="checked" ngInit="checked=true">Yes</mat-checkbox> -->
+            <button mat-flat-button class="applyBtn" (click)="show=!show">Bewerben</button>
 
-            <!-- <div *ngIf="checked">
-                Yey Checked
-            </div> -->
-            <button mat-raised-button class="applyBtn">starte Bewerbung</button>
+            <div *ngIf="show">
+
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button #trueAdmit name="yes" (change)="0" value="1">Ja, ich bin in Kontakt mit dem Coaching</mat-radio-button>
+                    <mat-radio-button #falseAdmit name="no" (change)="0" value="2">Nein, ich habe noch keinen Kontakt aufgenommen</mat-radio-button>
+                </mat-radio-group>
+
+                <div *ngIf="trueAdmit.checked" class="option-display-lable">
+                    <h3>Sende die Bewerbung an:</h3>
+                    <a>nachwuchs@zkb.ch</a>
+                </div>
+                <div *ngIf="falseAdmit.checked" class="option-display-lable">
+                    <p>Setze dich vor deiner Bewerbung mit dem Coaching der Stadt Zürich in Kontakt. Danach kannst du dich direkt bewerben.</p>
+                    <a>coaching@jobplus.ch</a>
+                    <p>044 123 54 64</p>
+                </div>
+            </div>
         </div>
     </div>
 </mat-dialog-content>

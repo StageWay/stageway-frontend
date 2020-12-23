@@ -26,9 +26,9 @@ export class StageBrowseViewComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.closeOnNavigation = true;
 
     this.dialog.open(StageDetailDialogComponent, dialogConfig);
-
   }
   
   ngOnInit() {

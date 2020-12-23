@@ -6,6 +6,7 @@
 }
 
 .example-card {
+    min-width: 30%;
     max-width: 400px;
     background-color: #F3F5F7;
     color: #111D4A;
@@ -27,4 +28,18 @@
 .location-lable {
     color: #0A7085;
     font-style: italic;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.stage-startDate-lable {
+    color: #0A7085;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+mat-card-title {
+    font-family: 'Share';
+    font-weight: bold;
 }

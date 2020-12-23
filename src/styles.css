@@ -7,13 +7,25 @@ h1 {
     color: #369;
     font-family: 'Share';
     font-size: 250%;
+    font-weight: bold;
 }
 
 h2,
 h3 {
     color: #111D4A;
     font-family: 'Share';
-    font-weight: lighter;
+    font-weight: bold;
+    font-size: 170%;
+}
+
+p {
+    font-family: 'Share';
+    font-size: 110%;
+}
+
+li {
+    font-family: 'Share';
+    font-size: 110%;
 }
 
 body {
@@ -27,6 +39,7 @@ input[type="text"],
 button {
     color: #333;
     font-family: 'Share';
+    font-size: 120%;
 }
 
 

@@ -9,13 +9,12 @@
 .flex-container-bottom {
     flex-direction: column;
     height: 100px;
-    text-align: center;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .flex-field-left {
-    color: #ffffff;
-    text-align: center;
-    padding: 80px;
+    color: #ffffff !important;
 }
 
 .flex-container-top>.flex-field-left {
@@ -26,9 +25,7 @@
 }
 
 .flex-field-right {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 5px;
 }
 
 .flex-container-top>.flex-field-right {
@@ -36,8 +33,17 @@
     width: 50%;
 }
 
+.welcome-text {
+    margin-right: 20%;
+    margin-left: 15%;
+    margin-top: 20%;
+}
+
 .welcome-img {
+    display: block;
     margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .browseViewBtn {
@@ -57,18 +63,31 @@
     color: #111D4A;
     margin-right: 30%;
     margin-left: 30%;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .flex-field-info {
     color: #111D4A;
     margin-right: 30%;
     margin-left: 30%;
-    margin-top: 60px;
+    margin-top: 80px;
+}
+
+.plus-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .flex-field-partners {
-    margin-top: 80px;
+    margin-top: 100px;
+    text-align: center;
 }
 
 h2 {

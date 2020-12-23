@@ -1,15 +1,22 @@
+<div class="container-introduction">
+    <h2>Coaching Angebot</h2>
+    <p>Als Teilnehmer von StageWay hast du die Möglichkeit, von einem breiten Coaching-Angebot der Stadt Zürich zu profitieren. Dieses Coaching ist modular aufgebaut und wird auf dich und deine Bedürfnisse zugeschnitten. Dein Coach steht dir von der Bewerbungsphase
+        bis hin zu deiner potentiellen Festanstellung – auf Wunsch auch danach – mit Rat und Tat zur Seite.</p>
+</div>
 <div class="container">
     <div class="card">
         <div class="face face1">
             <div class="content">
                 <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                <h3>Phase 1</h3>
+                <h3>Vor der Stage</h3>
             </div>
         </div>
         <div class="face face2">
             <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                <a href="#">Read More</a>
+                <p>Du bist unsicher, welche Stages für dich in Frage kommen oder du hast konkrete Fragen zu deiner Bewerbung für eine Stage.</p>
+                <br/>
+                <p>Vereinbare deinen ersten Coaching-Termin unter 044 412 78 88 oder schreibe ein Mail mit deinen Kontaktangaben an jobplus@zuerich.ch und wir melden uns bei dir.</p>
+                <button mat-raised-button (click)="scrollToElement(readMoreFirst)">Read More</button>
             </div>
         </div>
     </div>
@@ -17,13 +24,15 @@
         <div class="face face1">
             <div class="content">
                 <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
-                <h3>Phase 2</h3>
+                <h3>Während der Stage</h3>
             </div>
         </div>
         <div class="face face2">
             <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                <a href="#">Read More</a>
+                <p>Du möchtest mit deinem Coach besprechen, wie es in der Stage läuft und wie es nach diesem Einsatz beruflich bei dir weitergehen soll. Auch für all deine Fragen rund ums Thema Stellensuche hast du einen kompetenten Ansprechpartner.</p>
+                <br/>
+                <p>Wende dich für deinen Coaching-Termin an 044 412 78 88 oder schreibe ein Mail mit deinen Kontaktangaben an jobplus@zuerich.ch und wir melden uns bei dir.</p>
+                <button mat-raised-button (click)="scrollToElement(readMoreSecond)">Read More</button>
             </div>
         </div>
     </div>
@@ -31,14 +40,70 @@
         <div class="face face1">
             <div class="content">
                 <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                <h3>Phase 3</h3>
+                <h3>Nach der Stage</h3>
             </div>
         </div>
         <div class="face face2">
             <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                <a href="#">Read More</a>
+                <p>Du hast noch keine Festanstellung gefunden oder möchtest auch während der Probezeit von der dir vertrauten Beratungsperson weiter unterstützt werden.</p>
+                <br/>
+                <p>Wende dich für deinen Coaching-Termin an 044 412 78 88 oder schreibe ein Mail mit deinen Kontaktangaben an jobplus@zuerich.ch und wir melden uns bei dir.</p>
+                <button mat-raised-button (click)="scrollToElement(readMoreThird)">Read More</button>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="read-more-container">
+    <div #readMoreFirst class="read-more-first">
+        <h3>Vor der Stage</h3>
+        <p>In dieser Coaching-Phase können wir folgende Themen mit dir aufgreifen:</p>
+        <ul>
+            <li>Klärung individuelle Situation, Motivation, Coaching-Ziele</li>
+            <li>Erstes Feedback zu CV/Bewerbungsdossier, Potenzial, Marktfähigkeit, Strategien und Suchfeldern</li>
+            <li>Potenzialanalyse (Persönlichkeit, Fähigkeiten und Interessen) in Bezug auf Lehrbe-trieb/Stage</li>
+            <li>Marktanalyse, Kompetenzprofil, Suchfeldstrategie und Bewerbungscheck (Unterlagen)</li>
+            <li>Bewerbungsunterstützung (Stage)</li>
+            <li>Coaching Auftrittskompetenz/Vorstellungsgespräch</li>
+        </ul>
+        <p>Im Rahmen deines Coachings werden nicht all die oben aufgeführten Themen behandelt. Der Coach orientiert sich an deinen Anliegen und Bedürfnissen und stellt dein individuelles Coaching-Angebot zusammen.</p>
+    </div>
+</div>
+<div class="read-more-container">
+    <div #readMoreSecond class="read-more-second">
+        <h3>Während der Stage</h3>
+        <p>Das Coaching-Angebot während deiner Stage beinhaltet folgende Module:</p>
+        <ul>
+            <li>Erarbeitung Entwicklungsschritte und Herausforderungen während der Stage</li>
+            <li>Standortbestimmung bei Unternehmen (wenn sinnvoll und gewünscht)</li>
+            <li>Erstellung Kompetenzprofil</li>
+            <li>Vielfältige Bewerbungsunterstützung in Bezug auf Festanstellung, z.B.</li>
+            <ul>
+                <li>Suchfeldcoaching/Arbeitsmarktanalyse: verwandte Berufs- und Branchenfelder</li>
+                <li>Auftrittskompetenz: Kommunikations- und Netzwerkarbeit</li>
+                <li>Verschiedene Bewerbungsformen und Netzwerkstrategien</li>
+                <li>Unterstützung Bewerbungsschreiben</li>
+                <li>Training Vorstellungsgespräch</li>
+                <li>Umgang mit Absagen</li>
+            </ul>
+            <li>Evaluation Stage</li>
+            <li>Vernetzung zu anderen Unterstützungsangeboten</li>
+        </ul>
+        <p>Im Rahmen deines Coachings werden nicht all die oben aufgeführten Themen behandelt. Der Coach orientiert sich an deinen Anliegen und Bedürfnissen und stellt dein individuelles Coaching-Angebot zusammen.</p>
+    </div>
+</div>
+<div class="read-more-container">
+    <div #readMoreThird class="read-more-third">
+        <h3>Nach der Stage</h3>
+        <p>Nach deiner Stage können wir dich mit folgendem Angebot unterstützen:</p>
+        <ul>
+            <li>Falls du noch keine Festanstellung gefunden hast:</li>
+            <ul>
+                <li>Überprüfung Kompetenzprofil und Suchfeldstrategie</li>
+                <li>Weiterführung Bewerbungsunterstützung Festanstellung</li>
+                <li>Bei Bedarf: Vermittlung in weiterführendes Anschlussangebot</li>
+            </ul>
+            <li>Wenn du in eine Festanstellung übertrittst: Nachbetreuung während der Probezeit (falls gewünscht)</li>
+        </ul>
     </div>
 </div>

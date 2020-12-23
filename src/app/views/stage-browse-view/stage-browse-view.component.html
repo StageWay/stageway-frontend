@@ -1,6 +1,6 @@
 <div class="stage-container">
     <div fxLayout="row wrap">
-        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" (click)="openStageDetailDialog()" class="example-card">
+        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <!-- <div mat-card-avatar src="{{stageItem.stageCompanyImage}}" class="example-header-image"></div> -->
@@ -14,9 +14,16 @@
                     {{stageItem.stageSummary}}
                 </p>
                 <p class="location-lable">
-                    {{stageItem.stageLocation}}
+                    Standort: {{stageItem.stageLocation}}
+                </p>
+                <p class="stage-startDate-lable">
+                    <!-- {{stageItem.stageStartDate}} -->
+                    Start Datum: 04.01.21
                 </p>
             </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="openStageDetailDialog()">Erfahre mehr ></button>
+            </mat-card-actions>
         </mat-card>
     </div>
 </div>
