@@ -8,9 +8,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './views/top-nav/top-nav.component';
 import { DashboardViewComponent } from './views/dashboard-view/dashboard-view.component';
-import { ProfileViewComponent } from "./views/profile-view/profile-view.component";
 import { FooterViewComponent } from "./views/footer-view/footer-view.component";
-import { AuthButtonComponent } from "./auth0/auth-button/auth-button.component";
 import { WelcomeViewComponent } from "./views/welcome-view/welcome-view.component";
 import { GuideViewComponent } from "./views/guide-view/guide-view.component";
 import { StageBrowseViewComponent } from "./views/stage-browse-view/stage-browse-view.component";
@@ -18,6 +16,7 @@ import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-deta
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
 import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
 import { StageDetailModel } from "./views/stage-browse-view/stage-detail-model";
+import { AuthLoggoutButtonComponent } from "./auth0/auth-loggout-button/auth-loggout-button.component"
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -47,15 +46,14 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     TopNavComponent,
     DashboardViewComponent,
-    ProfileViewComponent,
     FooterViewComponent,
-    AuthButtonComponent,
     WelcomeViewComponent,
     GuideViewComponent,
     StageBrowseViewComponent,
     StageDetailDialogComponent,
     StageCreateDialogComponent,
     CoachingViewComponent,
+    AuthLoggoutButtonComponent
    ],
    
   imports: [
@@ -83,14 +81,13 @@ import { AppRoutingModule } from './app-routing.module';
     MatTableModule,
     MatFormFieldModule,
     FormsModule,
-
-    // Auth0 connection
-    AuthModule.forRoot({
-      domain: 'dev-hg4znr4o.eu.auth0.com',
-      clientId: 'sloSiLG0Ou95hV4zRBVh5DrhZ3JdN5jI'
-    }),
-
     AppRoutingModule,
+
+    // Import for auth0 connection
+    AuthModule.forRoot({
+      domain: 'dev-ey0aeeuj.eu.auth0.com',
+      clientId: '9qNKKZ0uEpHmiuOfCKvo8I6iqfix8jJk'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
