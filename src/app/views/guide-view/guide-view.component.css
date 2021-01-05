@@ -1,0 +1,21 @@
+h2 {
+    color: #111D4A;
+    margin-left: 50px;
+}
+
+.step-text {
+    position: absolute;
+    margin-top: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #111D4A;
+}
+
+.flex-container-top {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    margin: 0px;
+    margin-bottom: 25px;
+}

@@ -1,30 +1,28 @@
 <div class="stage-container">
-    <button (click)="openStageCreateDialog()" class=button-create-stage>Create Stage</button>
-    <h3>Stages</h3>
-    <mat-grid-list cols="2" rowHeight="2:1">
-        <div class="grid grid-pad">
-            <mat-card *ngFor="let stage of stageData.stages" (click)="openStageDetailDialog()" class="example-card">
-                <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{stage.stageTitle}}</mat-card-title>
-                    <mat-card-subtitle>{{stage.stageSubtitle}}</mat-card-subtitle>
-                    <button mat-icon-button class="button-favorite">
-                        <mat-icon>star</mat-icon>
-                    </button>
-                    <button mat-icon-button class="button-delete">
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </mat-card-header>
-                <img mat-card-image src="{{stage.stageImage}}" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <p>
-                        {{stage.stageSummary}}
-                    </p>
-                    <p class="location-lable">
-                        {{stage.stageLocation}}
-                    </p>
-                </mat-card-content>
-            </mat-card>
-        </div>
-    </mat-grid-list>
+    <div fxLayout="row wrap">
+        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <!-- <div mat-card-avatar src="{{stageItem.stageCompanyImage}}" class="example-header-image"></div> -->
+                <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
+                <mat-card-subtitle>{{stageItem.stageSubtitle}}</mat-card-subtitle>
+            </mat-card-header>
+            <!-- <img mat-card-image src="{{stageItem.stageImage}}" alt="Photo of Stage"> -->
+            <img mat-card-image src="/assets/images/welcome_image.PNG" alt="Photo of Stage">
+            <mat-card-content>
+                <p>
+                    {{stageItem.stageSummary}}
+                </p>
+                <p class="location-lable">
+                    Standort: {{stageItem.stageLocation}}
+                </p>
+                <p class="stage-startDate-lable">
+                    Start Datum: {{stageItem.stageDate}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="openStageDetailDialog(stageItem)">Erfahre mehr ></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>

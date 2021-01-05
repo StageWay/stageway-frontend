@@ -1,29 +1,55 @@
-<h2 mat-dialog-title>ABC Engineer</h2>
+<h2 class="mat-dialog-title">{{stageTitle}}</h2>
+<p class="mat-dialog-subtitle">{{stageSubtitle}}</p>
 <mat-dialog-content class="mat-typography">
-    <h3>Zusammenfassung</h3>
-    <p>Als “ABC Engineer” bist du Teil eines Entwicklungsteams und zuständig für die Entwicklung und den Betrieb der “XYZ Tools” unseres Datacenters.</p>
+    <div class="flex-container">
+        <div class="left-box">
+            <p>{{stageSummary}}</p>
 
-    <hr>
+            <h3>Tätigkeiten</h3>
+            <p>{{stageTasks}}</p>
 
-    <h3>Aufgaben</h3>
-    <p>Unsere „XYZ Tools“, die in der StageWay Application Cloud produziert werden, stellen die Verbindung zwischen den verschiedenen internen sowie externen Plattformen und Services her. Die Tools ermöglichen… Diese Stage bietet die Chance… In deinem Arbeitsalltag
-        bewältigst du Tätigkeiten, wie …</p>
+            <h3>Profil</h3>
+            <p>{{stageProfile}}
+            </p>
 
-    <hr>
+            <h3>Das können wir bieten</h3>
+            <p>{{stageBenefits}}
+            </p>
+        </div>
+        <div class="right-box">
+            <h3>Allgemeines</h3>
+            <p class="company-lable">{{stageCompany}}</p>
+            <p class="location-lable">{{stageLocation}}</p>
+            <p class="stage-startDate-lable">Start ab: {{stageDate}}</p>
+            <h3>Fragen?</h3>
+            <p class="contact-name-lable">{{stageContactName}}</p>
+            <p class="contact-tel-lable">{{stageContactTel}}</p>
+            <p class="contact-mail-lable">{{stageContactEmail}}</p>
+            <h3>Coaching</h3>
+            <p class="coching-describtion-lable">Entdecke das <a [routerLink]="['/app-coaching-view']">Coaching Angebot</a> der Stadt Zürich.
+            </p>
+            <mat-divider></mat-divider>
+            <button mat-flat-button class="applyBtn" (click)="show=!show">Bewerben</button>
 
-    <h3>Fähigkeiten</h3>
-    <p>Du hast deine Lehre abgeschlossen und bist auf der Suche nach einer spannenden und abwechslungsreicher Herausforderung in einer anderen Firma.</p>
+            <div *ngIf="show">
 
-    <hr>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button #trueAdmit name="yes" (change)="0" value="1">Ja, ich bin in Kontakt mit dem Coaching</mat-radio-button>
+                    <mat-radio-button #falseAdmit name="no" (change)="0" value="2">Nein, ich habe noch keinen Kontakt aufgenommen</mat-radio-button>
+                </mat-radio-group>
 
-    <h3>Vorteile &amp; Chancen</h3>
-    <p>Swiss Re: Du hast die Möglichkeit ein grosses Netzwerk im internationalen Raum zu bilden und erhälst einen spannenden Einblick in die Welt der Rückversichung.</p>
-
-    <hr>
-
-    <h3>Kontakt</h3>
-    <p>test.firma@domain.ch</p>
-
+                <div *ngIf="trueAdmit.checked" class="option-display-lable">
+                    <h3>Sende die Bewerbung an:</h3>
+                    <a>{{stageApplyConatct}}</a>
+                </div>
+                <div *ngIf="falseAdmit.checked" class="option-display-lable">
+                    <p>Setze dich vor deiner Bewerbung mit dem Coaching der Stadt Zürich in Kontakt. Danach kannst du dich direkt bewerben.</p>
+                    <a>coaching@jobplus.ch</a>
+                    <p>044 123 54 64</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions alinge="end">
     <button mat-button mat-dialog-close>Cancel</button>

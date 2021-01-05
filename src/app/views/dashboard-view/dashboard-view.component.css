@@ -1,0 +1,17 @@
+h2 {
+    text-decoration: underline;
+    text-decoration-color: #FF6700;
+    color: #111D4A;
+}
+
+.browse-container {
+    margin-top: 70px;
+    margin-left: 55px;
+}
+
+.button-create-stage {
+    background-color: #0A7085;
+    color: #ffffff;
+}
+
+.addStage {}

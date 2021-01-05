@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/79161702-e3ec-47e6-acc4-2f44e1598d2c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/StageWay",
+    "appService.deploySubpath": "."
+}

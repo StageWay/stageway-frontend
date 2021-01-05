@@ -1,44 +1,45 @@
 .stage-container {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
     color: #111D4A;
-}
-
-mat-grid-list {
-    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .example-card {
+    min-width: 30%;
     max-width: 400px;
-    background-color: #CEE5F2;
+    background-color: #F3F5F7;
     color: #111D4A;
+    margin-right: 30px;
+    margin-bottom: 50px;
+    box-shadow: -3px 6px 6px 0px rgba(176, 164, 176, 1);
+    transition: all .3s ease-in-out;
 }
 
 .example-card:hover {
-    opacity: 0.5;
-    cursor: pointer;
+    box-shadow: -3px 18px 20px 0px rgb(17, 29, 74);
 }
 
 .example-header-image {
-    /* background-image: url('{{stage.stageCompanyImage}}'); */
+    background-image: url('/assets/images/Swisscom_logo.png');
     background-size: cover;
 }
 
 .location-lable {
     color: #0A7085;
     font-style: italic;
+    font-size: 14px;
+    margin-bottom: 2px;
 }
 
-.button-favorite {
-    color: #0a7085;
-    margin-left: 75px;
+.stage-startDate-lable {
+    color: #0A7085;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 0px;
 }
 
-.button-delete {
-    color: #FF6700;
-    margin-left: 2px;
-}
-
-.button-create-stage {
-    margin-top: 20px;
+mat-card-title {
+    font-family: 'Share';
+    font-weight: bold;
 }
