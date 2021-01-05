@@ -5,15 +5,27 @@
 
 h1 {
     color: #369;
-    font-family: Arial;
+    font-family: 'Share';
     font-size: 250%;
+    font-weight: bold;
 }
 
 h2,
 h3 {
-    color: #444;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
+    color: #111D4A;
+    font-family: 'Share';
+    font-weight: bold;
+    font-size: 170%;
+}
+
+p {
+    font-family: 'Share';
+    font-size: 110%;
+}
+
+li {
+    font-family: 'Share';
+    font-size: 110%;
 }
 
 body {
@@ -26,14 +38,26 @@ body,
 input[type="text"],
 button {
     color: #333;
-    font-family: Arial;
+    font-family: 'Share';
+    font-size: 120%;
 }
 
 
 /* everywhere else */
 
 * {
-    font-family: Arial, sans-serif;
+    font-family: 'Share';
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Share';
+}
+
+body {
+    margin: 0;
+    font-family: 'Share';
 }
 
 html,
@@ -43,7 +67,5 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Share';
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

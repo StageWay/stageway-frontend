@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StageDetailDialogComponent } from './stage-detail-dialog/stage-detail-dialog.component';
-import { StageCreateDialogComponent } from "./stage-create-dialog/stage-create-dialog.component";
+import { StageService } from './stage.service';
+import { StageDetailModel } from "./stage-detail-model";
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,38 +11,28 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./stage-browse-view.component.css']
 })
 export class StageBrowseViewComponent implements OnInit {
-  stageData: any;
+  
+  constructor( private service:StageService, private dialog: MatDialog, private httpClient: HttpClient) {}
 
-  constructor(private dialog: MatDialog, private httpClient: HttpClient) { 
+  StageList: StageDetailModel[];
+
+  ngOnInit(): void {
+    this.loadData();
   }
 
+  loadData(){
+    this.service.getAllStages().subscribe(data=>{
+        this.StageList=data;
+    });
+  }   
 
-  openStageDetailDialog() {
-
+  openStageDetailDialog(item: StageDetailModel) {
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.closeOnNavigation = true;
+    dialogConfig.data = { stageItem: item };
 
     this.dialog.open(StageDetailDialogComponent, dialogConfig);
-
   }
-
-  openStageCreateDialog() {
-
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(StageCreateDialogComponent, dialogConfig);
-
-  }
-
-  ngOnInit() {
-    this.httpClient.get<any>("assets/stages/stages.json").subscribe((data)=>
-    this.stageData = data
-  )
-  }
-
 }

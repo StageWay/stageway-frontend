@@ -1,25 +1,95 @@
-.middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-image: url("/assets/images/welcome_image.PNG");
-    background-size: auto; */
-    background-repeat: none;
+.flex-container-top {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+    margin: 0px;
+    margin-bottom: 25px;
+}
+
+.flex-container-bottom {
+    flex-direction: column;
+    height: 100px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.flex-field-left {
+    color: #ffffff !important;
+}
+
+.flex-container-top>.flex-field-left {
+    background: #111D4A;
+    border-radius: 0px 0px 60px 0px;
+    width: 50%;
+    margin-right: 30px;
+}
+
+.flex-field-right {
+    margin-right: 5px;
+}
+
+.flex-container-top>.flex-field-right {
+    background: #ffffff;
+    width: 50%;
+}
+
+.welcome-text {
+    margin-right: 20%;
+    margin-left: 15%;
+    margin-top: 20%;
+}
+
+.welcome-img {
+    display: block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.browseViewBtn {
+    background-color: #FF6700;
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: large;
+}
+
+.coachingViewBtn {
+    background-color: #0A7085;
+    color: white;
+    font-size: large;
+}
+
+.flex-field-benefits {
+    color: #111D4A;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 80px;
+}
+
+.flex-field-info {
+    color: #111D4A;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 80px;
+}
+
+.plus-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-field-partners {
+    margin-top: 100px;
     text-align: center;
 }
 
-hr {
-    margin: auto;
-    width: 60%;
-    color: darkgray;
-}
-
-p {
-    color: #111D4A;
-}
-
-h1,
-h3 {
-    color: #0A7085;
+h2 {
+    color: #ffffff;
 }

@@ -1,4 +1,94 @@
-hr {
+.mat-dialog-title {
+    color: #111D4A;
+    font-family: 'Share';
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.mat-dialog-subtitle {
+    color: #0A7085;
+    font-family: 'Share';
+    font-style: italic;
+    margin-top: 0px;
+}
+
+h3 {
+    color: #111D4A;
+    font-family: 'Share';
+    font-weight: bold;
     margin-bottom: 5px;
-    color: darkgray;
+    font-size: 18px;
+}
+
+h2 {
+    color: #111D4A;
+    font-size: xx-large;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+    margin: 0px;
+}
+
+.flex-container>.left-box {
+    width: 70%;
+    margin-right: 30px;
+}
+
+.flex-container>.right-box {
+    width: 30%;
+}
+
+.applyBtn {
+    margin-top: 10px;
+    background-color: #0A7085;
+    color: white;
+    font-size: large;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.company-lable {
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+.location-lable {
+    margin-bottom: 2px;
+}
+
+.stage-startDate-lable {
+    margin-bottom: 20px;
+}
+
+.contact-name-lable {
+    margin-bottom: 2px;
+}
+
+.contact-tel-lable {
+    margin-bottom: 2px;
+}
+
+.contact-mail-lable {
+    margin-bottom: 20px;
+}
+
+.coching-describtion-lable {
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+mat-radio-button {
+    margin-bottom: 5px;
+    color: #FF6700;
+}
+
+mat-radio-inner-circle {
+    background-color: #FF6700;
+}
+
+.option-display-lable {
+    margin-top: 20px;
 }

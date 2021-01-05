@@ -1,6 +1,15 @@
+<div class="browse-container">
+    <h2>Stages</h2>
+    <div class="addStage">
+        <button (click)="openStageCreateDialog()" class="button-create-stage" mat-mini-fab>
+    <mat-icon>add</mat-icon>
+    </button>
+        <p>Stage erstellen</p>
+    </div>
+</div>
 <mat-tab-group>
-    <mat-tab label="browse">
+    <mat-tab label="Entdecken">
         <app-stage-browse-view></app-stage-browse-view>
     </mat-tab>
-    <mat-tab label="favorite"> favorite </mat-tab>
+    <!-- <mat-tab label="Favoriten"> favorite View works! </mat-tab> -> Gets impl later... -->
 </mat-tab-group>

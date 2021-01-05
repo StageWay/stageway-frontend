@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AuthButtonComponent } from './auth-button.component';
+import { GuideViewComponent } from './guide-view.component';
 
-describe('AuthButtonComponent', () => {
-  let component: AuthButtonComponent;
-  let fixture: ComponentFixture<AuthButtonComponent>;
+describe('GuideViewComponent', () => {
+  let component: GuideViewComponent;
+  let fixture: ComponentFixture<GuideViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthButtonComponent ]
+      declarations: [ GuideViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthButtonComponent);
+    fixture = TestBed.createComponent(GuideViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

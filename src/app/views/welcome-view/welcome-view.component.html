@@ -1,9 +1,37 @@
-<div class="welcome-page">
-    <div class="middle">
-        <h1>COMING SOON</h1>
-        <hr>
-        <h3>Vision</h3>
-        <p>Wir möchten Lehrabgänger*innen die Möglichkeit bieten, ihre Fähigkeiten und Kompetenzen zu erweitern und dadurch die optimalen Bedingungen schaffen, um sich im zukünftigen Berufsleben zu entfalten.</p>
-        <app-auth-button></app-auth-button>
+<div class="flex-container-top">
+    <div class="flex-field-left">
+        <div class="welcome-text">
+            <h2>Starte mit StageWay den nächsten Schritt in deine Zukunft</h2>
+            <p>Mit Stageway hast du die einmalige Chance, deinen Horizont zu erweitern und in ein neues Unternehmen einzusteigen.</p>
+            <a class="browseViewBtn" mat-raised-button [routerLink]="['/app-dashboard-view']">Stages erkunden</a>
+            <a class="coachingViewBtn" mat-raised-button [routerLink]="['/app-coaching-view']">Coaching?</a>
+        </div>
+    </div>
+    <div class="flex-field-right">
+        <img class="welcome-img" src="/assets/images/Illustation-StageWay-Startpage.png" alt="Welcome Image" width="523" height="415">
+    </div>
+</div>
+<div class="flex-container-bottom">
+    <div class="flex-field-benefits">
+        <img class="plus-img" src="/assets/images/Icon_plus.png" alt="Plus Image" width="140" height="126">
+        <h3>Vorteile</h3>
+        <p>Schaffe für dich optimale Grundvoraussetzungen für deine berufliche Zukunft, indem du:</p>
+        <ul>
+            <li>Einblicke in neue Branchen oder Berufsrichtungen erhältst</li>
+            <li>Deine Fähigkeiten und Kompetenzen erweiterst</li>
+            <li>Neue Arbeitsatmosphären erlebst</li>
+            <li>Vom Coaching der Stadt Zürich profitieren kannst</li>
+        </ul>
+    </div>
+    <div class="flex-field-info">
+        <img class="info-img" src="/assets/images/Icon_info.png" alt="Info Image" width="140" height="126">
+        <h3>Über uns:</h3>
+        <p>StageWay ist ein Gemeinschaftsprojekt der Stadt Zürich, Swiss Re, Swisscom und der Zürcher Kantonalbank. Das Ziel ist es, den Berufseinstieg für Lehrabgänger*innen anhand von neuen Chancen zu erleichtern.</p>
+        <p>Die beteiligten Unternehmen bieten auf einer selbst entwickelten Plattform Stages (Arbeitseinsätze) mit einer Dauer von mindestens 6 Monaten an. Damit wird die Möglichkeit geboten, einfacher in einer anderen Branche oder einer neuen Berufsrichtung Fuss zu
+            fassen sowie eine neue Firmenkultur kennenzulernen. </p>
+    </div>
+    <div class="flex-field-partners">
+        <h3>Partner</h3>
+        <img class="info-img" src="/assets/images/Logo_Partner.png" alt="Info Image" width="732" height="82">
     </div>
 </div>
