@@ -9,7 +9,7 @@ import { StageCreateDialogComponent } from '../stage-browse-view/stage-create-di
 })
 export class DashboardViewComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
   }
@@ -17,7 +17,7 @@ export class DashboardViewComponent implements OnInit {
   openStageCreateDialog() {
 
     const dialogConfig = new MatDialogConfig();
-
+ 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 

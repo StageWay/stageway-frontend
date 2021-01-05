@@ -1,20 +1,12 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
+import { ChangeDetectionStrategy, Component, EventEmitter, Input,
   OnInit,
   Output,
   AfterViewInit
 } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
-export function StageFormGroup(formBuilder: FormBuilder){
-  return formBuilder.group({
-    id:[],
-    stageTitle:[]
-  });
-}
+import { StageService } from '../../stage-browse-view/stage.service';
+import { StageDetailModel } from "../../stage-browse-view/stage-detail-model";
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-stage-create-dialog',
@@ -22,14 +14,23 @@ export function StageFormGroup(formBuilder: FormBuilder){
   styleUrls: ['./stage-create-dialog.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class StageCreateDialogComponent implements OnInit {
+  stage = new StageDetailModel();
+  
+  constructor(private service:StageService, private dialogRef: MatDialogRef<StageCreateDialogComponent>) {}
+  
   @Output() remove = new EventEmitter<FormGroup>();
-  @Input() customGroup: FormGroup;
-
-  constructor() { }
-
 
   ngOnInit() {
   }
 
+  saveStage() {
+    this.service.postStage(this.stage)
+      .subscribe(data => {
+        console.log(data)
+      })
+      this.dialogRef.close     
+  }
+  
 }

@@ -1,33 +1,30 @@
-<h2 class="mat-dialog-title">ABC Engineer</h2>
-<p class="mat-dialog-subtitle">StageWay Application Team</p>
+<h2 class="mat-dialog-title">{{stageTitle}}</h2>
+<p class="mat-dialog-subtitle">{{stageSubtitle}}</p>
 <mat-dialog-content class="mat-typography">
     <div class="flex-container">
         <div class="left-box">
-            <p>"Wir helfen da weiter, wo Ihr IT-Service endet", heisst das Motto des kompetenten Teams, das im IT Support die technische und fachliche Unterstützung der ratsuchenden Kunden übernimmt. Mit unserer Dienstleistungs-Philosophie erzielen wir höchste
-                Zufriedenheit bei den Kunden und den nachgelagerten Supporteinheiten. </p>
+            <p>{{stageSummary}}</p>
 
             <h3>Tätigkeiten</h3>
-            <p>Der User Service Desk stellt den Betrieb des redfox Arbeitsplatzes für die gesamte Zürcher Kantonalbank und deren Tochtergesellschaften sicher. Zudem ist er die Schnittstelle für sämtliche Anwender mit IT-Incidents. Nach einer Grundausbildung
-                kannst du dein Team unterstützen, den gesamten Incident-Prozess sicherzustellen. Die Bearbeitung der vielfältigen Kundenanfragen wird ergänzt mit Schulungen von Mitarbeitenden und Kunden, und machen dein Aufgabengebiet abwechslungsreich
-                und spannend. </p>
+            <p>{{stageTasks}}</p>
 
             <h3>Profil</h3>
-            <p>Abgeschlossene Kaufmännische / Informatik Ausbildung EFZ - Freude an komplexen und technischen Aufgaben - Vernetzers Denken - Offenheit & Teamfähigkeit - Mut & Engagement
+            <p>{{stageProfile}}
             </p>
 
             <h3>Das können wir bieten</h3>
-            <p>Friendly Workspace - Personalkonditionen auf Bankgeschäfte - günstige & gesund Verpflegung in unseren Personalrestaurants - ZVV-Bonuspass
+            <p>{{stageBenefits}}
             </p>
         </div>
         <div class="right-box">
             <h3>Allgemeines</h3>
-            <p class="company-lable">Zürcher Kantonalbank</p>
-            <p class="location-lable">Neue Hard 9, 8005 Zürich</p>
-            <p class="stage-startDate-lable">Start ab: 04.01.21</p>
+            <p class="company-lable">{{stageCompany}}</p>
+            <p class="location-lable">{{stageLocation}}</p>
+            <p class="stage-startDate-lable">Start ab: {{stageDate}}</p>
             <h3>Fragen?</h3>
-            <p class="contact-name-lable">Maria Muster</p>
-            <p class="contact-tel-lable">+41 79 333 33 33</p>
-            <p class="contact-mail-lable">bewerbungs.frage@firma.com</p>
+            <p class="contact-name-lable">{{stageContactName}}</p>
+            <p class="contact-tel-lable">{{stageContactTel}}</p>
+            <p class="contact-mail-lable">{{stageContactEmail}}</p>
             <h3>Coaching</h3>
             <p class="coching-describtion-lable">Entdecke das <a [routerLink]="['/app-coaching-view']">Coaching Angebot</a> der Stadt Zürich.
             </p>
@@ -43,7 +40,7 @@
 
                 <div *ngIf="trueAdmit.checked" class="option-display-lable">
                     <h3>Sende die Bewerbung an:</h3>
-                    <a>nachwuchs@zkb.ch</a>
+                    <a>{{stageApplyConatct}}</a>
                 </div>
                 <div *ngIf="falseAdmit.checked" class="option-display-lable">
                     <p>Setze dich vor deiner Bewerbung mit dem Coaching der Stadt Zürich in Kontakt. Danach kannst du dich direkt bewerben.</p>

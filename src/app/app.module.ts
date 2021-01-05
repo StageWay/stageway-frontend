@@ -17,6 +17,7 @@ import { StageBrowseViewComponent } from "./views/stage-browse-view/stage-browse
 import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-detail-dialog/stage-detail-dialog.component";
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
 import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
+import { StageDetailModel } from "./views/stage-browse-view/stage-detail-model";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -32,6 +33,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper'; 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { FormsModule } from '@angular/forms';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
@@ -52,8 +56,8 @@ import { AppRoutingModule } from './app-routing.module';
     StageDetailDialogComponent,
     StageCreateDialogComponent,
     CoachingViewComponent,
-
    ],
+   
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -76,6 +80,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatStepperModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatTableModule,
+    MatFormFieldModule,
+    FormsModule,
 
     // Auth0 connection
     AuthModule.forRoot({
