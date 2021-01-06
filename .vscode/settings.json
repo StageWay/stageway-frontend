@@ -3,6 +3,6 @@
         "node_modules{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/79161702-e3ec-47e6-acc4-2f44e1598d2c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/StageWay",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": "dist",
+    "appService.defaultWebAppToDeploy": "/subscriptions/66dcc450-8079-4f58-933c-f962ec82a744/resourceGroups/stageway/providers/Microsoft.Web/sites/stageway"
 }

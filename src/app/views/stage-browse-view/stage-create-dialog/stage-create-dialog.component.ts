@@ -30,7 +30,7 @@ export class StageCreateDialogComponent implements OnInit {
       .subscribe(data => {
         console.log(data)
       })
-      this.dialogRef.close     
+      this.dialogRef.close();    
   }
   
 }
