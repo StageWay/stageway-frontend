@@ -14,4 +14,6 @@ h2 {
     color: #ffffff;
 }
 
-.addStage {}
+.addStage {
+    /* display: none; */
+}
