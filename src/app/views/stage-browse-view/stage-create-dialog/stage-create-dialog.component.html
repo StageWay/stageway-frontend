@@ -15,7 +15,7 @@
         </mat-form-field>
         <form>
             <mat-label>Stage Vorschaubild </mat-label>
-            <input type="file" id="myFile" name="filename">
+            <input id="stageImg" type="file" name="stageImage" (change)="onFileChanged($event)" [(ngModel)]="stage.stageImage" />
         </form>
         <mat-form-field class="example-full-width">
             <mat-label>Stage Tätigkeiten</mat-label>

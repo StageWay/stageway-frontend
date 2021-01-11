@@ -7,3 +7,8 @@
 .example-full-width {
     width: 100%;
 }
+
+#stageImg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

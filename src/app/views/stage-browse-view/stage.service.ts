@@ -20,9 +20,10 @@ constructor(private http:HttpClient) { }
 
   postStage(stage:StageDetailModel): Observable<any> {
     const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(stage);
-    console.log(body)
-    return this.http.post(this.APIUrl + '/Stages', body,{'headers':headers})
+    const body = JSON.stringify(stage);
+    console.log(body);
+    return this.http.post(this.APIUrl + '/Stages', body,{'headers':headers});
   }
+
 
 }

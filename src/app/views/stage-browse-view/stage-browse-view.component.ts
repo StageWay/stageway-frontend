@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./stage-browse-view.component.css']
 })
 export class StageBrowseViewComponent implements OnInit {
-  defaultImgUrl : string = "/assets/images/defaultStageImg/default-stage-img.PNG";
   
   constructor( private service:StageService, private dialog: MatDialog, private httpClient: HttpClient) {}
 
