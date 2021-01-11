@@ -13,6 +13,5 @@ export class StageDetailModel {
     stageContactEmail: string;
     stageContactTel: string;
     stageApplyConatct: string;
-    stageImage: string;
-    stageCompanyImage: string;
+    stageImage: Blob[];
 }

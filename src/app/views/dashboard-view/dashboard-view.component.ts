@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StageCreateDialogComponent } from '../stage-browse-view/stage-create-dialog/stage-create-dialog.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-dashboard-view',
@@ -9,9 +10,14 @@ import { StageCreateDialogComponent } from '../stage-browse-view/stage-create-di
 })
 export class DashboardViewComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, public auth: AuthService) {
+  }
 
   ngOnInit() {
+    this.auth.user$.subscribe((user) => console.log({user}));
+    this.auth.idTokenClaims$.subscribe((idToken) => console.log({idToken}));;
+    console.log('auth info');
+    
   }
 
   openStageCreateDialog() {

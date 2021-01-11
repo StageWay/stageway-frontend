@@ -13,14 +13,10 @@
             <mat-label>Zusammenfassung</mat-label>
             <input matInput [(ngModel)]="stage.stageSummary" name="stageSummary" placeholder="Als “ABC Engineer” bist du Teil..." />
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Stage Company Image</mat-label>
-            <input matInput [(ngModel)]="stage.stageCompanyImage" name="stageCompanyImage" placeholder="assets/images/example-img" />
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Stage Image</mat-label>
-            <input matInput [(ngModel)]="stage.stageImage" name="stageImage" placeholder="assets/images/example-img" />
-        </mat-form-field>
+        <form>
+            <mat-label>Stage Vorschaubild </mat-label>
+            <input type="file" id="myFile" name="filename">
+        </form>
         <mat-form-field class="example-full-width">
             <mat-label>Stage Tätigkeiten</mat-label>
             <input matInput [(ngModel)]="stage.stageTasks" name="stageTasks" placeholder="Der User Service Desk stellt den Betrieb..." />
