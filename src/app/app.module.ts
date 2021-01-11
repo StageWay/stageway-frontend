@@ -16,7 +16,6 @@ import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-deta
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
 import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
 import { StageDetailModel } from "./views/stage-browse-view/stage-detail-model";
-import { AuthLoggoutButtonComponent } from "./auth0/auth-loggout-button/auth-loggout-button.component"
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -53,7 +52,6 @@ import { AppRoutingModule } from './app-routing.module';
     StageDetailDialogComponent,
     StageCreateDialogComponent,
     CoachingViewComponent,
-    AuthLoggoutButtonComponent
    ],
    
   imports: [

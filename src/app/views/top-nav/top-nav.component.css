@@ -35,6 +35,10 @@ button:hover {
     margin-left: 10px;
 }
 
+.profileIcon {
+    margin-right: 10px;
+}
+
 .ver-seperator-line {
     border-left: 4px solid #ffffff;
     height: 10px;
