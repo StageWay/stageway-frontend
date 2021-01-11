@@ -3,10 +3,12 @@
     <p *ngIf="auth.idTokenClaims$ | async as idToken">{{idToken["http://stageway.com/roles"]}}</p>
 
     <div class="addStage" *ngIf="auth.idTokenClaims$ | async as idToken">
-        <button (click)="openStageCreateDialog() " class="button-create-stage " mat-mini-fab>
-    <mat-icon>add</mat-icon>
-    </button>
-        <p>Stage erstellen</p>
+        <div *ngIf="idToken['http://stageway.com/roles']">
+            <button (click)="openStageCreateDialog()" class="button-create-stage " mat-mini-fab>
+        <mat-icon>add</mat-icon>
+        </button>
+            <p>Stage erstellen</p>
+        </div>
     </div>
 </div>
 <mat-tab-group>
