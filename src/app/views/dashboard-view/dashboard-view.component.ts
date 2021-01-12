@@ -20,6 +20,8 @@ export class DashboardViewComponent implements OnInit {
     
   }
 
+  
+
   openStageCreateDialog() {
 
     const dialogConfig = new MatDialogConfig();
