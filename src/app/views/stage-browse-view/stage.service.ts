@@ -7,7 +7,7 @@ import { StageDetailModel } from './stage-detail-model';
   providedIn: 'root'
 })
 export class StageService {
-APIUrl: string = "http://localhost:50046/api";
+APIUrl: string = "https://stageway-api.azurewebsites.net/api";
 constructor(private http:HttpClient) { }
 
   getAllStages():Observable<StageDetailModel[]>{
