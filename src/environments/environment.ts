@@ -2,8 +2,17 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+import { AuthModule } from '@auth0/auth0-angular';
+import { domain, clientId } from '../../auth_config_dev.json';
+
 export const environment = {
-  production: false
+  production: false,
+  auth: {
+    domain,
+    clientId,
+    redirectUri: window.location.origin,
+  },
 };
 
 /*

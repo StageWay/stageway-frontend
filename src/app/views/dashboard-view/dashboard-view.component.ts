@@ -14,13 +14,8 @@ export class DashboardViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.user$.subscribe((user) => console.log({user}));
-    this.auth.idTokenClaims$.subscribe((idToken) => console.log({idToken}));;
-    console.log('auth info');
-    
-  }
 
-  
+  }
 
   openStageCreateDialog() {
 

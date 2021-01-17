@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './views/top-nav/top-nav.component';
@@ -34,6 +35,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
@@ -80,12 +82,12 @@ import { AppRoutingModule } from './app-routing.module';
     MatFormFieldModule,
     FormsModule,
     AppRoutingModule,
+    MatProgressSpinnerModule,
 
-    // Import for auth0 connection
     AuthModule.forRoot({
-      domain: 'dev-ey0aeeuj.eu.auth0.com',
-      clientId: '9qNKKZ0uEpHmiuOfCKvo8I6iqfix8jJk'
+      ...env.auth,
     }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

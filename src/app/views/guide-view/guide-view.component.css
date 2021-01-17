@@ -1,21 +1,28 @@
-h2 {
-    color: #111D4A;
-    margin-left: 50px;
+#startText {
+    margin-left: 60px;
 }
 
-.step-text {
-    position: absolute;
-    margin-top: 10px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #111D4A;
-}
-
-.flex-container-top {
+.flex-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     background-color: #ffffff;
     margin: 0px;
     margin-bottom: 25px;
+}
+
+.flex-field-left {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.flex-field-right {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 60px;
+}
+
+.guide-img {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    fill: red;
 }

@@ -27,19 +27,19 @@ export class StageCreateDialogComponent implements OnInit {
   @Output() remove = new EventEmitter<FormGroup>();
 
   ngOnInit() {
-    // this.stage.stageTitle = 'Test';
-    // this.stage.stageSubtitle = 'Test';
-    // this.stage.stageSummary = 'Test';
-    // this.stage.stageTasks = 'Test';
-    // this.stage.stageProfile = 'Test';
-    // this.stage. stageBenefits = 'Test';
-    // this.stage.stageCompany = 'Test';
-    // this.stage.stageLocation = 'Test';
-    // this.stage.stageDate = new Date();
-    // this.stage.stageContactName = 'Test'; 
-    // this.stage.stageContactEmail = 'test@test.ch';
-    // this.stage.stageContactTel = '+41 333 33 33';
-    // this.stage.stageApplyConatct = 'testtest@test.ch';
+    this.stage.stageTitle = 'Test';
+    this.stage.stageSubtitle = 'Test';
+    this.stage.stageSummary = 'Test';
+    this.stage.stageTasks = 'Test';
+    this.stage.stageProfile = 'Test';
+    this.stage. stageBenefits = 'Test';
+    this.stage.stageCompany = 'Test';
+    this.stage.stageLocation = 'Test';
+    this.stage.stageDate = new Date();
+    this.stage.stageContactName = 'Test'; 
+    this.stage.stageContactEmail = 'test@test.ch';
+    this.stage.stageContactTel = '+41 333 33 33';
+    this.stage.stageApplyConatct = 'testtest@test.ch';
   }
 
   onFileChanged(event) {

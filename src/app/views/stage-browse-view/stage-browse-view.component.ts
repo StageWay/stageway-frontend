@@ -15,6 +15,7 @@ export class StageBrowseViewComponent implements OnInit {
   constructor( private service:StageService, private dialog: MatDialog, private httpClient: HttpClient) {}
 
   StageList: StageDetailModel[];
+  dataIsLoading = true;
 
   ngOnInit(): void {
     this.loadData();
@@ -23,6 +24,7 @@ export class StageBrowseViewComponent implements OnInit {
   loadData(){
     this.service.getAllStages().subscribe(data=>{
         this.StageList=data;
+        this.dataIsLoading = false;
     });
   }   
 
