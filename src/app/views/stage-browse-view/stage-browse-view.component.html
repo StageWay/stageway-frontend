@@ -1,4 +1,4 @@
-<mat-spinner *ngIf="dataIsLoading"></mat-spinner>
+<mat-spinner *ngIf="dataIsLoading == true"></mat-spinner>
 <div class="stage-container">
     <div fxLayout="row wrap">
         <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card">
