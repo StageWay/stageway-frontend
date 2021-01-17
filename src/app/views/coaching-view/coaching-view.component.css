@@ -13,7 +13,7 @@ html {
     margin-top: 40px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 50px;
+    margin-bottom: 200px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -122,7 +122,7 @@ button {
     display: flex;
     margin-left: 25px;
     margin-right: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     background-color: #F3F5F7;
 }
 

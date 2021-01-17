@@ -1,3 +1,4 @@
+<mat-spinner *ngIf="dataIsLoading"></mat-spinner>
 <div class="stage-container">
     <div fxLayout="row wrap">
         <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card">
@@ -6,7 +7,7 @@
                 <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
                 <mat-card-subtitle>{{stageItem.stageSubtitle}}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="{{stageItem.stageImage}}">
+            <img mat-card-image src="{{stageItem.stageImage || '/assets/images/default_stage_image.png'}}">
             <mat-card-content>
                 <p>
                     {{stageItem.stageSummary}}
