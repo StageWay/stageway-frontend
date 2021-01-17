@@ -7,7 +7,9 @@ import { StageDetailModel } from './stage-detail-model';
   providedIn: 'root'
 })
 export class StageService {
+
 APIUrl: string = "http://localhost:9000/api";
+
 constructor(private http:HttpClient) { }
 
   getAllStages():Observable<StageDetailModel[]>{
