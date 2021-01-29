@@ -10,19 +10,17 @@
     margin-bottom: 25px;
 }
 
-.flex-field-left {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.flex-field-right {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 60px;
-}
-
 .guide-img {
     margin-top: 10%;
     margin-bottom: 10%;
     fill: red;
+    height: auto;
+    width: 30vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.guide-text {
+    margin-right: 5vw;
+    margin-left: 5vw;
 }
