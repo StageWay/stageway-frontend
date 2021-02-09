@@ -8,7 +8,7 @@ import { StageDetailModel } from './stage-detail-model';
 })
 export class StageService {
 
-APIUrl: string = "https://stageway-api.azurewebsites.net/api";
+APIUrl: string = "http://localhost:9000/api";
 
 constructor(private http:HttpClient) { }
 
