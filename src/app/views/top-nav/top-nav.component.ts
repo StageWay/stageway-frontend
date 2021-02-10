@@ -15,8 +15,4 @@ export class TopNavComponent implements OnInit {
   ngOnInit(): void  {
   }
 
-  logout() {
-    
-  }
-
 }
