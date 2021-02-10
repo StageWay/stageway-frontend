@@ -17,9 +17,9 @@
     </button>
     <mat-menu #menuProfile="matMenu">
         <button mat-menu-item *ngIf="auth.user$ | async as user">Hallo {{user.nickname}}</button>
-        <button mat-menu-item (click)="auth.loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Einloggen</button>
+        <button mat-menu-item (click)="auth.loginWithRedirect()" *ngIf="!(auth.isAuthenticated$ | async)">Einloggen</button>
         <button mat-menu-item (click)="auth.logout()" *ngIf="auth.isAuthenticated$ | async">Ausloggen</button>
-      </mat-menu>
+    </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
         <mat-icon>more_vert</mat-icon>
     </button>
@@ -48,3 +48,5 @@
     </mat-menu>
     </span>
 </mat-toolbar>
+<!-- just to check wheter a user's loged in -->
+<div *ngIf="!(auth.isAuthenticated$ | async)" class="auth-check"></div>

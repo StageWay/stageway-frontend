@@ -13,10 +13,16 @@ export class TopNavComponent implements OnInit {
   constructor(public router: Router, public auth: AuthService, @Inject(DOCUMENT) public document: Document) { }
 
   ngOnInit(): void  {
+    this.auth.error$.subscribe(data => {
+      console.log(data);
+    })
+    this.auth.isAuthenticated$.subscribe(data => {
+      console.log(data);
+    })
+    this.auth.user$.subscribe(data => {
+      console.log(data);
+    })
   }
 
-  logout() {
-    
-  }
 
 }
