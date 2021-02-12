@@ -1,3 +1,4 @@
+import { StageDeleteDialogComponent } from './views/stage-browse-view/stage-delete-dialog/stage-delete-dialog.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,6 +55,7 @@ import { AppRoutingModule } from './app-routing.module';
     StageDetailDialogComponent,
     StageCreateDialogComponent,
     CoachingViewComponent,
+    StageDeleteDialogComponent
    ],
    
   imports: [
@@ -83,7 +85,6 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
-
     AuthModule.forRoot({
       ...env.auth,
     }),

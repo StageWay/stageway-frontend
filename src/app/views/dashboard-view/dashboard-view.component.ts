@@ -1,3 +1,5 @@
+import { StageService } from './../stage-browse-view/stage.service';
+import { StageDetailModel } from './../stage-browse-view/stage-detail-model';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StageCreateDialogComponent } from '../stage-browse-view/stage-create-dialog/stage-create-dialog.component';
@@ -10,11 +12,16 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class DashboardViewComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, public auth: AuthService) {
+  constructor(private stageService: StageService, private dialog: MatDialog, public auth: AuthService) {
   }
 
-  ngOnInit() {
+  isAdmin:boolean = false;
 
+  ngOnInit() {
+    this.auth.idTokenClaims$.subscribe(data => {
+      this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
+      console.log(this.isAdmin)
+    })
   }
 
   openStageCreateDialog() {
@@ -23,9 +30,19 @@ export class DashboardViewComponent implements OnInit {
  
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.data =  new StageDetailModel()
 
-    this.dialog.open(StageCreateDialogComponent, dialogConfig);
-
+    var dialog = this.dialog.open(StageCreateDialogComponent, dialogConfig);
+    dialog.afterClosed().subscribe(stage => {
+      this.createStage(stage)
+    })
   }
+
+  createStage(stage: StageDetailModel) {
+    this.stageService.postStage(stage).subscribe(data => {
+      console.log(data)
+      //this data could be used to add in frontend or something like that
+    })
+}
 
 }

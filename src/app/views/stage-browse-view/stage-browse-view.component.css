@@ -43,3 +43,7 @@ mat-card-title {
     font-family: 'Share';
     font-weight: bold;
 }
+
+.stage-admin-btn {
+    float: right;
+}
