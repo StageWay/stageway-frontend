@@ -37,6 +37,5 @@ export class StageCreateDialogComponent implements OnInit {
       };
     }
   }
-
   
 }

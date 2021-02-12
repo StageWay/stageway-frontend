@@ -40,8 +40,7 @@ export class DashboardViewComponent implements OnInit {
 
   createStage(stage: StageDetailModel) {
     this.stageService.postStage(stage).subscribe(data => {
-      console.log(data)
-      //this data could be used to add in frontend or something like that
+      location.reload();
     })
 }
 
