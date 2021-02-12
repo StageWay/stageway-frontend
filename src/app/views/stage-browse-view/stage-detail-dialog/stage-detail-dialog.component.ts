@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoachingViewComponent } from '../../coaching-view/coaching-view.component';
 import { StageDetailModel } from "../../stage-browse-view/stage-detail-model";
 import { StageService } from '../stage.service';
+import { DatePipe } from '@angular/common'
 
 
 @Component({
@@ -14,6 +15,7 @@ export class StageDetailDialogComponent implements OnInit {
   show = false;
 
   private initStage: StageDetailModel;
+  private datepipe: DatePipe;
 
   constructor(private service: StageService, private dialogRef: MatDialogRef<any> , @Inject(MAT_DIALOG_DATA) data: {stageItem: StageDetailModel}) {
     this.initStage = data.stageItem;
@@ -45,6 +47,7 @@ export class StageDetailDialogComponent implements OnInit {
     this.stageBenefits = this.initStage.stageBenefits;
     this.stageCompany = this.initStage.stageCompany;
     this.stageLocation = this.initStage.stageLocation;
+    // let formattedDate = this.datepipe.transform(this.initStage.stageDate, 'yyyy-MM-dd');
     this.stageDate = this.initStage.stageDate;
     this.stageContactName = this.initStage.stageContactName;
     this.stageContactEmail = this.initStage.stageContactEmail;
