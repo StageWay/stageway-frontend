@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input,
   OnInit,
   Output,
-  AfterViewInit
+  AfterViewInit,
+  Inject
 } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { StageService } from '../../stage-browse-view/stage.service';
+import { FormGroup } from '@angular/forms';
 import { StageDetailModel } from "../../stage-browse-view/stage-detail-model";
-import { MatDialogRef } from '@angular/material/dialog';
-import { HttpClient } from '@angular/common/http';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-stage-create-dialog',
@@ -17,29 +16,15 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class StageCreateDialogComponent implements OnInit {
-  stage = new StageDetailModel();
-  
+
   stageImage;
   
-  constructor(private service:StageService, private dialogRef: MatDialogRef<StageCreateDialogComponent>, private httpClient:HttpClient) {
+  constructor(@Inject(MAT_DIALOG_DATA) public stage: StageDetailModel) {
   }
   
   @Output() remove = new EventEmitter<FormGroup>();
 
   ngOnInit() {
-    this.stage.stageTitle = 'Test';
-    this.stage.stageSubtitle = 'Test';
-    this.stage.stageSummary = 'Test';
-    this.stage.stageTasks = 'Test';
-    this.stage.stageProfile = 'Test';
-    this.stage. stageBenefits = 'Test';
-    this.stage.stageCompany = 'Test';
-    this.stage.stageLocation = 'Test';
-    this.stage.stageDate = new Date();
-    this.stage.stageContactName = 'Test'; 
-    this.stage.stageContactEmail = 'test@test.ch';
-    this.stage.stageContactTel = '+41 333 33 33';
-    this.stage.stageApplyConatct = 'testtest@test.ch';
   }
 
   onFileChanged(event) {
@@ -52,16 +37,5 @@ export class StageCreateDialogComponent implements OnInit {
       };
     }
   }
-
-  saveStage() {
-    this.service.postStage(this.stage)
-      .subscribe(data => {
-        console.log(data)
-      })
-      this.dialogRef.close();  
-      //Feature 4 Webpage reload after Save
-      window.location.reload();
-  }
-
   
 }

@@ -21,6 +21,12 @@
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button (click)="openStageDetailDialog(stageItem)">Erfahre mehr ></button>
+                <button mat-button class="stage-admin-btn" (click)="deleteStage(stageItem)" *ngIf="isAdmin">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-button class="stage-admin-btn" (click)="editStage(stageItem)" *ngIf="isAdmin">
+                    <mat-icon>edit</mat-icon>
+                </button>
             </mat-card-actions>
         </mat-card>
     </div>
