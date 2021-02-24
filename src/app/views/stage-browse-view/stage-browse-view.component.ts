@@ -26,7 +26,6 @@ export class StageBrowseViewComponent implements OnInit {
     this.loadData();
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
-      console.log(this.isAdmin)
     })
   }
 
@@ -42,6 +41,7 @@ export class StageBrowseViewComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.closeOnNavigation = true;
+    dialogConfig.width = "70vw";
     dialogConfig.data = { stageItem: item };
 
     this.dialog.open(StageDetailDialogComponent, dialogConfig);
@@ -50,7 +50,6 @@ export class StageBrowseViewComponent implements OnInit {
   deleteStage(item: StageDetailModel) {
     var dialog = this.dialog.open(StageDeleteDialogComponent)
     dialog.afterClosed().subscribe(data => {
-      console.log(data)
       if(data == true) {
         this.service.deleteStage(item.stageId).subscribe(() => {
           this.loadData();

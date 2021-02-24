@@ -20,7 +20,6 @@ export class DashboardViewComponent implements OnInit {
   ngOnInit() {
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
-      console.log(this.isAdmin)
     })
   }
 

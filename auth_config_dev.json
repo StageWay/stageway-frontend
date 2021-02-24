@@ -1,4 +1,5 @@
 {
     "domain": "stagewaydevelopment.eu.auth0.com",
-    "clientId": "LlG8AItPZqiEqsKt0APxOXa9GxvArPCU"
+    "clientId": "LlG8AItPZqiEqsKt0APxOXa9GxvArPCU",
+    "scope": "openid"
 }
