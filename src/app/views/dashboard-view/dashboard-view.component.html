@@ -1,12 +1,11 @@
 <div class="browse-container">
     <h2>Stages</h2>
-    <p *ngIf="auth.idTokenClaims$ | async as idToken">{{idToken["http://stageway.com/roles"]}}</p>
 
-    <div class="addStage" *ngIf="auth.idTokenClaims$ | async as idToken">
-        <div *ngIf="idToken['http://stageway.com/roles']">
+    <div class="addStage" *ngIf="isAdmin">
+        <div>
             <button (click)="openStageCreateDialog()" class="button-create-stage " mat-mini-fab>
-        <mat-icon>add</mat-icon>
-        </button>
+                <mat-icon>add</mat-icon>
+            </button>
             <p>Stage erstellen</p>
         </div>
     </div>

@@ -50,3 +50,7 @@ mat-spinner {
     margin-top: 100px;
     color: #111D4A;
 }
+
+.stage-admin-btn {
+    float: right;
+}
