@@ -39,6 +39,7 @@ export class StageBrowseViewComponent implements OnInit {
 
   openStageDetailDialog(item: StageDetailModel) {
     const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = "70vw";
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.closeOnNavigation = true;
