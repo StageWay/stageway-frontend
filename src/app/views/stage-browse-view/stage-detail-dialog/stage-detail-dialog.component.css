@@ -80,15 +80,6 @@ h2 {
     margin-right: 40px;
 }
 
-mat-radio-button {
-    margin-bottom: 5px;
-    color: #FF6700;
-}
-
-mat-radio-inner-circle {
-    background-color: #FF6700;
-}
-
 .option-display-lable {
     margin-top: 20px;
 }
