@@ -83,3 +83,7 @@ h2 {
 .option-display-lable {
     margin-top: 20px;
 }
+
+.mat.dialog.content {
+    max-height: 80vh;
+}
