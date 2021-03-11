@@ -17,9 +17,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export class StageCreateDialogComponent implements OnInit {
 
-  stageImage;
+  stageImageBackup;
+  pictureSizeOkay = true;
   
   constructor(@Inject(MAT_DIALOG_DATA) public stage: StageDetailModel) {
+    this.stageImageBackup = stage.stageImage
   }
   
   @Output() remove = new EventEmitter<FormGroup>();
@@ -29,12 +31,20 @@ export class StageCreateDialogComponent implements OnInit {
 
   onFileChanged(event) {
     if (event.target.files.length > 0) {
-      let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0]);
-      reader.onload = (event2) => {
-        // Sets the html <img> tag to the image.
-        this.stage.stageImage = reader.result.toString();
-      };
+      if(event.target.files[0]["size"] < 2621441) { //check filesize 2.5 MB
+        let reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = (event2) => {
+          // Sets the html <img> tag to the image.
+          this.stage.stageImage = reader.result.toString();
+          document.getElementById("stageImg").style.color = "initial";
+        };
+        this.pictureSizeOkay = true;
+      } else {
+        this.stage.stageImage = this.stageImageBackup;
+        document.getElementById("stageImg").style.color = "red";
+        this.pictureSizeOkay = false;
+      }
     }
   }
   
