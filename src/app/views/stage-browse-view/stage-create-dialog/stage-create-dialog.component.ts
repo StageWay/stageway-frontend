@@ -31,7 +31,7 @@ export class StageCreateDialogComponent implements OnInit {
 
   onFileChanged(event) {
     if (event.target.files.length > 0) {
-      if(event.target.files[0]["size"] < 2621441) { //check filesize 2.5 MB
+      if(event.target.files[0]["size"] < 2621440) { //check filesize 2.5 MB
         let reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.onload = (event2) => {
