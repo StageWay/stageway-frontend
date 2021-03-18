@@ -21,6 +21,8 @@ export class StageBrowseViewComponent implements OnInit {
   StageList: StageDetailModel[];
   dataIsLoading = true;
   isAdmin:boolean = false;
+  private editing = false;
+  private deleting = false;
 
   ngOnInit() {
     this.loadData();
@@ -37,7 +39,16 @@ export class StageBrowseViewComponent implements OnInit {
     });
   }   
 
+  toggleEdit() {
+    this.editing = !this.editing;
+  }
+
+  toggleDelete() {
+    this.deleting = !this.deleting;
+  }
+
   openStageDetailDialog(item: StageDetailModel) {
+    if (this.editing || this.deleting) return;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = "70vw";
     dialogConfig.disableClose = true;
@@ -46,21 +57,24 @@ export class StageBrowseViewComponent implements OnInit {
     dialogConfig.data = { stageItem: item };
 
     this.dialog.open(StageDetailDialogComponent, dialogConfig);
+
   }
 
-  deleteStage(item: StageDetailModel) {
+  async deleteStage(item: StageDetailModel) {
     var dialog = this.dialog.open(StageDeleteDialogComponent)
     dialog.afterClosed().subscribe(data => {
       console.log(data)
+      this.toggleDelete()
       if(data == true) {
         this.service.deleteStage(item.stageId).subscribe(() => {
           this.loadData();
         }); 
       }
     })
+    
   }
 
-  editStage(item: StageDetailModel) {
+  async editStage(item: StageDetailModel) {
     const dialogConfig = new MatDialogConfig();
  
     dialogConfig.disableClose = true;
@@ -69,6 +83,7 @@ export class StageBrowseViewComponent implements OnInit {
 
     var dialog = this.dialog.open(StageCreateDialogComponent, dialogConfig);
     dialog.afterClosed().subscribe(stage => {
+      this.toggleEdit();
       this.service.putStage(stage).subscribe();
     })
   }
