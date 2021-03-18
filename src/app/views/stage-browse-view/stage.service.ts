@@ -3,13 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StageDetailModel } from './stage-detail-model';
+import { environment } from '../../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class StageService {
 
-APIUrl: string = "http://localhost:9000/api";
+APIUrl: string = environment.baseAPIUrl;
 
 constructor(private http:HttpClient, private auth: AuthService) { }
 
