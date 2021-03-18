@@ -35,7 +35,7 @@
 
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button #trueAdmit name="yes" (change)="0" value="1">Ja, ich bin in Kontakt mit dem Coaching</mat-radio-button>
-                    <mat-radio-button #falseAdmit name="no" (change)="0" value="2">Nein, ich habe noch keinen Kontakt aufgenommen</mat-radio-button>
+                    <mat-radio-button #falseAdmit name="no" (change)="0" value="2"><br/>Nein, ich habe noch keinen <br/> Kontakt aufgenommen</mat-radio-button>
                 </mat-radio-group>
 
                 <div *ngIf="trueAdmit.checked" class="option-display-lable">
