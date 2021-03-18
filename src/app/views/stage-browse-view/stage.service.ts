@@ -17,16 +17,18 @@ constructor(private http:HttpClient, private auth: AuthService) { }
 
   prepareToken() {
     this.auth.idTokenClaims$.subscribe(data => {
-      this.token =  "Bearer " + data["__raw"];
+      this.token =  data["__raw"];
     })
   }
 
   getAllStages():Observable<StageDetailModel[]>{
+    this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}  
     return this.http.get<StageDetailModel[]>(this.APIUrl+'/Stages', {headers: headers});
   }
 
   postStage(stage:StageDetailModel): Observable<any> {
+    this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}  
     const body = JSON.stringify(stage);
     console.log(body);
@@ -34,11 +36,13 @@ constructor(private http:HttpClient, private auth: AuthService) { }
   }
 
   deleteStage(stageId: number) {
+    this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}  
     return this.http.delete(this.APIUrl + '/Stages/' + stageId, {headers: headers});
   }
 
   putStage(stage: StageDetailModel) {
+    this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}   
     const body = JSON.stringify(stage);
     console.log(body);
