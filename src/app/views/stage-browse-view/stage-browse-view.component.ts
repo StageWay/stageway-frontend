@@ -28,7 +28,6 @@ export class StageBrowseViewComponent implements OnInit {
     this.loadData();
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
-      console.log(this.isAdmin)
     })
   }
 
@@ -50,10 +49,10 @@ export class StageBrowseViewComponent implements OnInit {
   openStageDetailDialog(item: StageDetailModel) {
     if (this.editing || this.deleting) return;
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = "70vw";
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.closeOnNavigation = true;
+    dialogConfig.width = "70vw";
     dialogConfig.data = { stageItem: item };
 
     this.dialog.open(StageDetailDialogComponent, dialogConfig);
