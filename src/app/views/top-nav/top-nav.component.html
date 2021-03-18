@@ -1,15 +1,15 @@
 <mat-toolbar fxLayout="row">
-    <span id="logo" fxFlex [routerLink]="['/app-welcome-view']">
+    <span id="logo" fxFlex [routerLink]="['/welcome']">
     <img class="logo-img" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
     </span>
     <span class="menu-item-buttons">
-    <button id="navItem" mat-button fxHide.xs [routerLink]="['/app-dashboard-view']">
+    <button id="navItem" mat-button fxHide.xs [routerLink]="['/stages']">
         Stages
     </button>
-    <button id="navItem" mat-button fxHide.xs [routerLink]="['/app-guide-view']">
+    <button id="navItem" mat-button fxHide.xs [routerLink]="['/guide']">
         So funktioniert's
     </button>
-    <button id="navItem" mat-button fxHide.xs [routerLink]="['/app-coaching-view']">
+    <button id="navItem" mat-button fxHide.xs [routerLink]="['/coaching']">
         Coaching 
     </button>
     <button id="navItem" class="profileIcon" mat-icon-button fxHide.xs [matMenuTriggerFor]="menuProfile">
@@ -25,7 +25,7 @@
     </button>
     <mat-menu #dropMenu="matMenu">
         <ng-container>
-            <button mat-button fxHide.xs [routerLink]="['/app-dashboard-view']">
+            <button mat-button fxHide.xs [routerLink]="['/stages']">
                 <mat-icon class="icon">home</mat-icon>
                 Dashboard
             </button>
@@ -40,7 +40,7 @@
                 Guide
             </button>
             <mat-divider></mat-divider>
-            <button mat-button fxHide.xs [routerLink]="['/app-welcome-view']">
+            <button mat-button fxHide.xs [routerLink]="['/welcome']">
                 <mat-icon class="icon">login</mat-icon>
                 login
             </button>
