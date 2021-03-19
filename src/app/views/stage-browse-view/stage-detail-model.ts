@@ -14,4 +14,5 @@ export class StageDetailModel {
     stageContactTel: string;
     stageApplyConatct: string;
     stageImage: string;
+    stageOwner?: string;
 }
