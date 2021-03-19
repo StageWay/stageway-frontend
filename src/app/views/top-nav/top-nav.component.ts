@@ -16,10 +16,6 @@ export class TopNavComponent implements OnInit {
 
   ngOnInit(): void  {
     this.stages.prepareToken();
-    this.auth.idTokenClaims$.subscribe(data => {
-      var token =  "Bearer " + data["__raw"];
-      console.log(token)
-    })
   }
 
 }
