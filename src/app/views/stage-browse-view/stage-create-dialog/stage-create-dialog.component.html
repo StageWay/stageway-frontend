@@ -2,7 +2,7 @@
     <form class="example-form">
         <h2 mat-dialog-title>Stage erstellen</h2>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Title</mat-label>
+            <mat-label>Stage Titel</mat-label>
             <input matInput [(ngModel)]="stage.stageTitle" name="stageTitle" placeholder="ABC Engineer" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
@@ -14,7 +14,7 @@
             <input matInput [(ngModel)]="stage.stageSummary" name="stageSummary" placeholder="Als “ABC Engineer” bist du Teil..." />
         </mat-form-field>
         <form>
-            <mat-label>Stage Vorschaubild </mat-label>
+            <mat-label>Stage Vorschaubild (max. 2.5 MB)</mat-label>
             <input id="stageImg" type="file" name="stageImage" (change)="onFileChanged($event)" [(ngModel)]="stage.stageImage" />
         </form>
         <mat-form-field class="example-full-width">
@@ -61,5 +61,5 @@
 </mat-dialog-content>
 <mat-dialog-actions alinge="end">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button mat-dialog-save [mat-dialog-close]="stage">Save</button>
+    <button mat-button mat-dialog-save [mat-dialog-close]="stage" [disabled]="!pictureSizeOkay">Save</button>
 </mat-dialog-actions>

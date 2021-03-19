@@ -3,20 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
-
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
-
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './views/top-nav/top-nav.component';
-import { DashboardViewComponent } from './views/dashboard-view/dashboard-view.component';
 import { FooterViewComponent } from "./views/footer-view/footer-view.component";
-import { WelcomeViewComponent } from "./views/welcome-view/welcome-view.component";
-import { GuideViewComponent } from "./views/guide-view/guide-view.component";
-import { StageBrowseViewComponent } from "./views/stage-browse-view/stage-browse-view.component";
 import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-detail-dialog/stage-detail-dialog.component";
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
-import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
 import { StageDetailModel } from "./views/stage-browse-view/stage-detail-model";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,22 +33,17 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-import { AppRoutingModule } from './app-routing.module';
-
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 @NgModule({
   declarations: [				
     AppComponent,
     TopNavComponent,
-    DashboardViewComponent,
     FooterViewComponent,
-    WelcomeViewComponent,
-    GuideViewComponent,
-    StageBrowseViewComponent,
     StageDetailDialogComponent,
     StageCreateDialogComponent,
-    CoachingViewComponent,
-    StageDeleteDialogComponent
+    StageDeleteDialogComponent,
+    routingComponents,
    ],
    
   imports: [
@@ -87,6 +75,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatProgressSpinnerModule,
     AuthModule.forRoot({
       ...env.auth,
+      
     }),
 
   ],

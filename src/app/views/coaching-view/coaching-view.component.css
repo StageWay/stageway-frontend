@@ -13,7 +13,7 @@ html {
     margin-top: 40px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -61,6 +61,11 @@ html {
     margin-left: 25%;
 }
 
+.container .card .face.face1 .content .image2 img {
+    max-width: 200px;
+    margin-left: 34%;
+}
+
 .container .card .face.face1 .content h3 {
     margin: 10px 0 0;
     padding: 0;
@@ -77,7 +82,7 @@ html {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     transform: translateY(-280px);
 }
 
@@ -120,27 +125,43 @@ button {
 
 .read-more-container {
     display: flex;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 80px;
-    background-color: #F3F5F7;
+    margin-left: 18px;
+    margin-right: 18px;
+
 }
 
 .read-more-first {
     flex-direction: column;
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-bottom: 20px;
+    margin-right: 18%;
+    margin-left: 18%;
+    margin-bottom: 50px;
+    text-align: justify;
 }
 
 .read-more-second {
     flex-direction: column;
-    margin-right: 20%;
-    margin-left: 20%;
+    margin-right: 18%;
+    margin-left: 18%;
+    margin-top: 52px;
+    margin-bottom: 50px;
+    text-align: justify;
 }
 
 .read-more-third {
     flex-direction: column;
-    margin-right: 20%;
-    margin-left: 20%;
+    margin-right: 18%;
+    margin-left: 18%;
+    margin-top: 52px;
+    margin-bottom: 50px;
+    text-align: justify;
+    width: 64%;
+}
+
+hr {
+    width: 32vw;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0%;
 }
