@@ -52,3 +52,15 @@ mat-spinner {
     margin-left: auto;
     margin-right: auto;
 }
+
+mat-card{
+    display:flex;
+    flex-direction: column;
+  }
+mat-card-header {
+    flex-shrink: 0;
+  }
+mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+  }

@@ -19,9 +19,9 @@
                     Start Datum: {{stageItem.stageDate | date:'yyyy-MM-dd'}}
                 </p>
             </mat-card-content>
-            <mat-card-actions>
+            <mat-card-actions align="bottom">
                 <button mat-button>Erfahre mehr ></button>
-                <button mat-button class="stage-admin-btn" (click)="toggleDelete(); deleteStage(stageItem)" *ngIf="isAdmin">
+                 <button mat-button class="stage-admin-btn" (click)="toggleDelete(); deleteStage(stageItem)" *ngIf="isAdmin">
                     <mat-icon>delete</mat-icon>
                 </button>
                 <button mat-button class="stage-admin-btn" (click)="toggleEdit(); editStage(stageItem)" *ngIf="isAdmin">
