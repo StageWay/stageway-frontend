@@ -68,3 +68,20 @@ body {
     margin: 0;
     font-family: 'Share';
 }
+
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: rgb(17, 30, 75);
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: rgb(17, 30, 75);
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color:rgb(17, 30, 75);
+} 
+
+.mat-radio-button.mat-accent {
+    margin-bottom: 3px;
+}

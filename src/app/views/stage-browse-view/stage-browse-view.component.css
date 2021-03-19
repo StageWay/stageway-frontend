@@ -54,3 +54,21 @@ mat-spinner {
 .stage-admin-btn {
     float: right;
 }
+
+mat-spinner {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+mat-card{
+    display:flex;
+    flex-direction: column;
+  }
+mat-card-header {
+    flex-shrink: 0;
+  }
+mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+  }

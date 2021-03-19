@@ -1,7 +1,7 @@
 <mat-spinner *ngIf="dataIsLoading == true"></mat-spinner>
 <div class="stage-container">
     <div fxLayout="row wrap">
-        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card">
+        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card" (click)="openStageDetailDialog(stageItem)">
             <mat-card-header>
                 <!-- <div mat-card-avatar class="example-header-image"></div> -->
                 <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
@@ -20,11 +20,11 @@
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button (click)="openStageDetailDialog(stageItem)">Erfahre mehr ></button>
-                <button mat-button class="stage-admin-btn" (click)="deleteStage(stageItem)" *ngIf="isAdmin">
+                <button mat-button>Erfahre mehr ></button>
+                <button *ngIf="isOwner(stageItem)" mat-button class="stage-admin-btn" (click)="toggleDelete(); deleteStage(stageItem)">
                     <mat-icon>delete</mat-icon>
                 </button>
-                <button mat-button class="stage-admin-btn" (click)="editStage(stageItem)" *ngIf="isAdmin">
+                <button *ngIf="isOwner(stageItem)" mat-button class="stage-admin-btn" (click)="toggleEdit(); editStage(stageItem)">
                     <mat-icon>edit</mat-icon>
                 </button>
             </mat-card-actions>
