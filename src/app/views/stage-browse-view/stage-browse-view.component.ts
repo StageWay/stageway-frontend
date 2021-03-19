@@ -23,11 +23,13 @@ export class StageBrowseViewComponent implements OnInit {
   isAdmin:boolean = false;
   private editing = false;
   private deleting = false;
+  private userId:string;
 
   ngOnInit() {
     this.loadData();
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
+      this.userId = data["sub"]
     })
   }
 
@@ -62,7 +64,6 @@ export class StageBrowseViewComponent implements OnInit {
   async deleteStage(item: StageDetailModel) {
     var dialog = this.dialog.open(StageDeleteDialogComponent)
     dialog.afterClosed().subscribe(data => {
-      console.log(data)
       this.toggleDelete()
       if(data == true) {
         this.service.deleteStage(item.stageId).subscribe(() => {
@@ -85,5 +86,16 @@ export class StageBrowseViewComponent implements OnInit {
       this.toggleEdit();
       this.service.putStage(stage).subscribe();
     })
+  }
+
+  isOwner(stage: StageDetailModel):boolean {
+    if(!this.isAdmin) {
+      return false;
+    }
+    if(this.userId == "auth0|5ffdfc6333618a00763c5243")
+    {
+      return true;
+    }
+    return stage.stageOwner == this.userId;
   }
 }

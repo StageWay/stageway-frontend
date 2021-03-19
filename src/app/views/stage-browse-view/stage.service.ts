@@ -33,7 +33,6 @@ constructor(private http:HttpClient, private auth: AuthService) { }
     this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}  
     const body = JSON.stringify(stage);
-    console.log(body);
     return this.http.post(this.APIUrl + '/Stages', body,{'headers':headers});
   }
 
@@ -47,7 +46,6 @@ constructor(private http:HttpClient, private auth: AuthService) { }
     this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}   
     const body = JSON.stringify(stage);
-    console.log(body);
     return this.http.put(this.APIUrl + '/Stages/' + stage.stageId, body,{'headers':headers});
   }
 
