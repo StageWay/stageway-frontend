@@ -41,6 +41,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
+import { StageErrorDialogComponent } from './views/stage-browse-view/stage-error-dialog/stage-error-dialog.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { AppRoutingModule } from './app-routing.module';
     StageDetailDialogComponent,
     StageCreateDialogComponent,
     CoachingViewComponent,
-    StageDeleteDialogComponent
+    StageDeleteDialogComponent,
+    StageErrorDialogComponent
    ],
    
   imports: [

@@ -2,15 +2,15 @@
     <form class="example-form">
         <h2 mat-dialog-title>Stage erstellen</h2>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Title</mat-label>
+            <mat-label>*Stage Title</mat-label>
             <input matInput [(ngModel)]="stage.stageTitle" name="stageTitle" placeholder="ABC Engineer" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Untertitel</mat-label>
+            <mat-label>*Stage Untertitel</mat-label>
             <input matInput [(ngModel)]="stage.stageSubtitle" name="stageSubtitle" placeholder="StageWay Application Team" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Zusammenfassung</mat-label>
+            <mat-label>*Zusammenfassung</mat-label>
             <input matInput [(ngModel)]="stage.stageSummary" name="stageSummary" placeholder="Als “ABC Engineer” bist du Teil..." />
         </mat-form-field>
         <form>
@@ -18,19 +18,19 @@
             <input id="stageImg" type="file" name="stageImage" (change)="onFileChanged($event)" [(ngModel)]="stage.stageImage" />
         </form>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Tätigkeiten</mat-label>
+            <mat-label>*Stage Tätigkeiten</mat-label>
             <input matInput [(ngModel)]="stage.stageTasks" name="stageTasks" placeholder="Der User Service Desk stellt den Betrieb..." />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Profil</mat-label>
+            <mat-label>*Stage Profil</mat-label>
             <input matInput [(ngModel)]="stage.stageProfile" name="stageProfile" placeholder="Abgeschlossene Kaufmännische / Informatik Ausbildung EFZ" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Vorteile</mat-label>
+            <mat-label>*Stage Vorteile</mat-label>
             <input matInput [(ngModel)]="stage.stageBenefits" name="stageBenefits" placeholder="Friendly Workspace..." />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Firma</mat-label>
+            <mat-label>*Stage Firma</mat-label>
             <input matInput [(ngModel)]="stage.stageCompany" name="stageCompany" placeholder="Muster AG" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
@@ -38,7 +38,7 @@
             <input matInput type="date" [(ngModel)]="stage.stageDate" name="stageDate" placeholder="2021.01.12" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Standort</mat-label>
+            <mat-label>*Stage Standort</mat-label>
             <input matInput [(ngModel)]="stage.stageLocation" name="stageLocation" placeholder="Musterstrasse X, 8005 Zürich" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
@@ -50,11 +50,11 @@
             <input matInput [(ngModel)]="stage.stageContactTel" name="stageContactTel" placeholder="+41 79 333 .. .." />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Kontakt Email</mat-label>
+            <mat-label>*Stage Kontakt Email</mat-label>
             <input matInput [(ngModel)]="stage.stageContactEmail" name="stageContactEmail" placeholder="bewerbungs.frage@muster.com" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Stage Bewerbungs Adresse</mat-label>
+            <mat-label>*Stage Bewerbungs Adresse</mat-label>
             <input matInput [(ngModel)]="stage.stageApplyConatct" name="stageApplyConatct" placeholder="nachwuchs@muster.ch" />
         </mat-form-field>
     </form>
@@ -62,4 +62,5 @@
 <mat-dialog-actions alinge="end">
     <button mat-button mat-dialog-close>Cancel</button>
     <button mat-button mat-dialog-save [mat-dialog-close]="stage">Save</button>
+    <h4 class="mandatory-text">*Plichtfeld</h4>
 </mat-dialog-actions>
