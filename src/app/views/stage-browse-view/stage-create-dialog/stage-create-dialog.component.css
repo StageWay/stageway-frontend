@@ -12,3 +12,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.mandatory-text {
+    color: gray;
+    font-size: 70%;
+    font-weight: lighter;
+}

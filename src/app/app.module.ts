@@ -11,6 +11,7 @@ import { FooterViewComponent } from "./views/footer-view/footer-view.component";
 import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-detail-dialog/stage-detail-dialog.component";
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
 import { StageDetailModel } from "./views/stage-browse-view/stage-detail-model";
+import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -34,6 +35,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { StageErrorDialogComponent } from './views/stage-browse-view/stage-error-dialog/stage-error-dialog.component';
+
 
 @NgModule({
   declarations: [				
@@ -44,6 +47,9 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     StageCreateDialogComponent,
     StageDeleteDialogComponent,
     routingComponents,
+    CoachingViewComponent,
+    StageDeleteDialogComponent,
+    StageErrorDialogComponent
    ],
    
   imports: [
