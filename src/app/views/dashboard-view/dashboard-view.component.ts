@@ -27,7 +27,6 @@ export class DashboardViewComponent implements OnInit {
 
     const dialogConfig = new MatDialogConfig();
  
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data =  new StageDetailModel()
 
