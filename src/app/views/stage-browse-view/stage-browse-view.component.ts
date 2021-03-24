@@ -7,6 +7,7 @@ import { StageDetailDialogComponent } from './stage-detail-dialog/stage-detail-d
 import { StageService } from './stage.service';
 import { StageDetailModel } from "./stage-detail-model";
 import { HttpClient } from '@angular/common/http';
+import { HostListener } from '@angular/core';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class StageBrowseViewComponent implements OnInit {
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
       this.userId = data["sub"]
-    })
+    }) 
   }
 
   loadData(){
@@ -98,4 +99,21 @@ export class StageBrowseViewComponent implements OnInit {
     }
     return stage.stageOwner == this.userId;
   }
+
+  resize(): boolean {
+    var width = window.innerWidth - 100;
+    var columnNumber = width / 500;
+    var columns = ""
+    for (let index = 0; index < columnNumber; index++) {
+      columns = columns + " 1fr"
+    }
+    document.getElementById("stage-container").style.setProperty("grid-template-columns", columns)
+    return true;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resize();
+  }
+
 }
