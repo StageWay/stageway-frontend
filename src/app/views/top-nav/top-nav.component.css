@@ -43,3 +43,7 @@ button:hover {
     border-left: 4px solid #ffffff;
     height: 10px;
 }
+
+.logo-img {
+    cursor: pointer;
+}
