@@ -8,8 +8,7 @@
         </mat-card-header>
         <img mat-card-image src="{{stageItem.stageImage || '/assets/images/default_stage_image.png'}}">
         <mat-card-content>
-            <p>
-                {{stageItem.stageSummary}}
+            <p [innerHtml]="getMultilineString(stageItem.stageSummary)">
             </p>
             <p class="location-lable">
                 Standort: {{stageItem.stageLocation}}
