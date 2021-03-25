@@ -116,4 +116,8 @@ export class StageBrowseViewComponent implements OnInit {
     this.resize();
   }
 
+  getMultilineString(orig: string): string {
+    return orig.replace(/\n/gi, " <br> ");
+  }
+
 }

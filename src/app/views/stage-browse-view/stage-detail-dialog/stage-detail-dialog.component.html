@@ -3,18 +3,16 @@
 <mat-dialog-content class="mat-typography">
     <div class="flex-container">
         <div class="left-box">
-            <p>{{stageSummary}}</p>
+            <p [innerHtml]="getMultilineString(stageSummary)"></p>
 
             <h3>Tätigkeiten</h3>
-            <p>{{stageTasks}}</p>
+            <p [innerHtml]="getMultilineString(stageTasks)"></p>
 
             <h3>Profil</h3>
-            <p>{{stageProfile}}
-            </p>
+            <p [innerHtml]="getMultilineString(stageProfile)"></p>
 
             <h3>Das können wir bieten</h3>
-            <p>{{stageBenefits}}
-            </p>
+            <p [innerHtml]="getMultilineString(stageBenefits)"></p>
         </div>
         <div class="right-box">
             <h3>Allgemeines</h3>

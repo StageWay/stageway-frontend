@@ -29,6 +29,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
@@ -76,6 +77,7 @@ import { StageErrorDialogComponent } from './views/stage-browse-view/stage-error
     MatRadioModule,
     MatTableModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
     FormsModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
