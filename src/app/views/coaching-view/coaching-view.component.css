@@ -1,6 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
 
 .container-introduction {
     text-align: center;
@@ -10,24 +7,20 @@ html {
 }
 
 .container {
-    margin-top: 40px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 200px;
     position: relative;
     display: flex;
-    justify-content: space-between;
-}
-
-.container .card {
-    position: relative;
-    cursor: pointer;
-    margin-right: 10px;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .container .card .face {
-    width: 380px;
-    height: 380px;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    margin-right: 5px;
+    margin-left: 5px;
     transition: 0.5s;
 }
 
@@ -104,7 +97,7 @@ html {
     background: #0A7085;
     color: #ffffff;
 }
-
+/*__________________________________________________________________________*/
 p,
 h3,
 li {
@@ -120,6 +113,8 @@ button {
 
 .read-more-container {
     display: flex;
+    min-width: fit-content;
+    max-width: fit-content;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 80px;
@@ -130,7 +125,7 @@ button {
     flex-direction: column;
     margin-right: 20%;
     margin-left: 20%;
-    margin-bottom: 20px;
+    
 }
 
 .read-more-second {
@@ -143,4 +138,5 @@ button {
     flex-direction: column;
     margin-right: 20%;
     margin-left: 20%;
+    
 }
