@@ -68,22 +68,27 @@
 
 .flex-field-benefits {
     color: #111D4A;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 18%;
+    margin-left: 18%;
     margin-top: 80px;
+    text-align: justify;
+    margin-bottom: 50px;
 }
 
 .flex-field-info {
     color: #111D4A;
-    margin-right: 30%;
-    margin-left: 30%;
-    margin-top: 80px;
+    margin-right: 18%;
+    margin-left: 18%;
+    margin-top: 52px;
+    text-align: justify;
+    margin-bottom: 50px;
 }
 
 .plus-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 .info-img {
@@ -111,6 +116,15 @@
 
 h2 {
     color: #ffffff;
+}
+
+hr {
+    width: 32vw;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0%;
 }
 /*________________________________________________*/
 

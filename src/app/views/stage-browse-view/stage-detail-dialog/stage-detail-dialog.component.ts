@@ -56,4 +56,8 @@ export class StageDetailDialogComponent implements OnInit {
 
   }
 
+  getMultilineString(orig: string): string {
+    return orig.replace(/\n/gi, " <br> ");
+  }
+
 }

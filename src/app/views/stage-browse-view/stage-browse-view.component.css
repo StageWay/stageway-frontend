@@ -1,13 +1,12 @@
-.stage-container {
-    margin-left: 5%;
-    margin-right: 5%;
+#stage-container {
+    margin-left: 50px;
+    margin-right: 50px;
     color: #111D4A;
     margin-top: 50px;
+    display: grid;
 }
 
 .example-card {
-    min-width: 30%;
-    max-width: 400px;
     background-color: #F3F5F7;
     color: #111D4A;
     margin-right: 30px;
@@ -53,3 +52,17 @@ mat-spinner {
     margin-right: auto;
     margin-top: 10px;
 }
+
+mat-card{
+    display:flex;
+    flex-direction: column;
+    width: calc(100% - 64px);
+    margin-left: 16px;
+  }
+mat-card-header {
+    flex-shrink: 0;
+  }
+mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+  }

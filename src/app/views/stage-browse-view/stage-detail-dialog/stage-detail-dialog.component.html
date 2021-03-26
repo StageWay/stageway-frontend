@@ -3,18 +3,16 @@
 <mat-dialog-content class="mat-typography">
     <div class="flex-container">
         <div class="left-box">
-            <p>{{stageSummary}}</p>
+            <p [innerHtml]="getMultilineString(stageSummary)"></p>
 
             <h3>Tätigkeiten</h3>
-            <p>{{stageTasks}}</p>
+            <p [innerHtml]="getMultilineString(stageTasks)"></p>
 
             <h3>Profil</h3>
-            <p>{{stageProfile}}
-            </p>
+            <p [innerHtml]="getMultilineString(stageProfile)"></p>
 
             <h3>Das können wir bieten</h3>
-            <p>{{stageBenefits}}
-            </p>
+            <p [innerHtml]="getMultilineString(stageBenefits)"></p>
         </div>
         <div class="right-box">
             <h3>Allgemeines</h3>
@@ -26,7 +24,7 @@
             <p class="contact-tel-lable">{{stageContactTel}}</p>
             <p class="contact-mail-lable">{{stageContactEmail}}</p>
             <h3>Coaching</h3>
-            <p class="coching-describtion-lable">Entdecke das <a [routerLink]="['/app-coaching-view']" mat-dialog-close>Coaching Angebot</a> der Stadt Zürich.
+            <p class="coching-describtion-lable">Entdecke das <a [routerLink]="['/coaching']" mat-dialog-close>Coaching Angebot</a> der Stadt Zürich.
             </p>
             <mat-divider></mat-divider>
             <button mat-flat-button class="applyBtn" (click)="show=!show">Bewerben</button>
@@ -35,7 +33,7 @@
 
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button #trueAdmit name="yes" (change)="0" value="1">Ja, ich bin in Kontakt mit dem Coaching</mat-radio-button>
-                    <mat-radio-button #falseAdmit name="no" (change)="0" value="2">Nein, ich habe noch keinen Kontakt aufgenommen</mat-radio-button>
+                    <mat-radio-button #falseAdmit name="no" (change)="0" value="2"><br/>Nein, ich habe noch keinen <br/> Kontakt aufgenommen</mat-radio-button>
                 </mat-radio-group>
 
                 <div *ngIf="trueAdmit.checked" class="option-display-lable">

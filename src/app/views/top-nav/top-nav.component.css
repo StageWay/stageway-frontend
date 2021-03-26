@@ -44,6 +44,6 @@ button:hover {
     height: 10px;
 }
 
-@media screen and (min-width: 600){
-   
+.logo-img {
+    cursor: pointer;
 }

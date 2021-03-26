@@ -3,21 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
-
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
-
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './views/top-nav/top-nav.component';
-import { DashboardViewComponent } from './views/dashboard-view/dashboard-view.component';
 import { FooterViewComponent } from "./views/footer-view/footer-view.component";
-import { WelcomeViewComponent } from "./views/welcome-view/welcome-view.component";
-import { GuideViewComponent } from "./views/guide-view/guide-view.component";
-import { StageBrowseViewComponent } from "./views/stage-browse-view/stage-browse-view.component";
 import { StageDetailDialogComponent } from "./views/stage-browse-view/stage-detail-dialog/stage-detail-dialog.component";
 import { StageCreateDialogComponent } from "./views/stage-browse-view/stage-create-dialog/stage-create-dialog.component";
-import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
 import { StageDetailModel } from "./views/stage-browse-view/stage-detail-model";
+import { CoachingViewComponent } from "./views/coaching-view/coaching-view.component";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -35,27 +29,28 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { StageErrorDialogComponent } from './views/stage-browse-view/stage-error-dialog/stage-error-dialog.component';
 
 
 @NgModule({
   declarations: [				
     AppComponent,
     TopNavComponent,
-    DashboardViewComponent,
     FooterViewComponent,
-    WelcomeViewComponent,
-    GuideViewComponent,
-    StageBrowseViewComponent,
     StageDetailDialogComponent,
     StageCreateDialogComponent,
+    StageDeleteDialogComponent,
+    routingComponents,
     CoachingViewComponent,
-    StageDeleteDialogComponent
+    StageDeleteDialogComponent,
+    StageErrorDialogComponent
    ],
    
   imports: [
@@ -82,11 +77,13 @@ import { AppRoutingModule } from './app-routing.module';
     MatRadioModule,
     MatTableModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
     FormsModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
     AuthModule.forRoot({
       ...env.auth,
+      
     }),
 
   ],

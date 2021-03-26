@@ -1,6 +1,6 @@
 <mat-toolbar fxLayout="row">
-    <span id="logo" fxFlex [routerLink]="['/app-welcome-view']">
-        <img class="logo-img" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
+    <span id="logo" fxFlex>
+        <img class="logo-img" [routerLink]="['/app-welcome-view']" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
     </span>
     <span class="menu-item-buttons">
         <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/app-dashboard-view']">
