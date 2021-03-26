@@ -1,15 +1,15 @@
 <mat-toolbar fxLayout="row">
     <span id="logo" fxFlex>
-        <img class="logo-img" [routerLink]="['/app-welcome-view']" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
+        <img class="logo-img" [routerLink]="['/welcome']" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
     </span>
     <span class="menu-item-buttons">
-        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/app-dashboard-view']">
+        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/stages']">
             Stages
         </button>
-        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/app-guide-view']">
+        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/guide']">
             So funktioniert's
         </button>
-        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/app-coaching-view']">
+        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/coaching']">
             Coaching 
         </button>
         <button id="navItem" class="profileIcon" mat-icon-button fxHide.sm fxHide.xs fxHide.md [matMenuTriggerFor]="menuProfile">
@@ -25,24 +25,16 @@
         </button>
         <mat-menu #dropMenu="matMenu">
             <ng-container>
-                <button mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/app-dashboard-view']">
-                    <mat-icon class="icon">home</mat-icon>
-                    Dashboard
+                <button mat-button fxShow.sm fxShow.xs fxHide fxShow.md [routerLink]="['/stages']">
+                    Stages
                 </button>
                 <mat-divider></mat-divider>
-                <button mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['']">
-                    <mat-icon class="icon">face</mat-icon>
-                    Profile
+                <button mat-button fxShow.sm fxShow.xs fxHide fxShow.md [routerLink]="['/guide']">
+                    So funktioniert's
                 </button>
                 <mat-divider></mat-divider>
-                <button mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['']">
-                    <mat-icon class="icon">live_help</mat-icon>
-                    Guide
-                </button>
-                <mat-divider></mat-divider>
-                <button mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/app-welcome-view']">
-                    <mat-icon class="icon">login</mat-icon>
-                    login
+                <button mat-button fxShow.sm fxShow.xs fxHide fxShow.md [routerLink]="['/coaching']">
+                    Coaching
                 </button>
             </ng-container>
         </mat-menu>
