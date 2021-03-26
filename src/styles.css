@@ -85,3 +85,13 @@ body {
 .mat-radio-button.mat-accent {
     margin-bottom: 3px;
 }
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #ff6700;
+  }
+  
+  ::selection {
+    color: white;
+    background: #ff6700;
+  }
