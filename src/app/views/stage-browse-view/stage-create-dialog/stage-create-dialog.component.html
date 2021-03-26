@@ -41,18 +41,23 @@
             <mat-label>*Stage Standort</mat-label>
             <input matInput [(ngModel)]="stage.stageLocation" name="stageLocation" placeholder="Musterstrasse X, 8005 Zürich" />
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Stage Kontakt Name</mat-label>
-            <input matInput [(ngModel)]="stage.stageContactName" name="stageContactName" placeholder="Maria Muster" />
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Stage Kontakt Telefon</mat-label>
-            <input matInput [(ngModel)]="stage.stageContactTel" name="stageContactTel" placeholder="+41 79 333 .. .." />
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>*Stage Kontakt Email</mat-label>
-            <input matInput [(ngModel)]="stage.stageContactEmail" name="stageContactEmail" placeholder="bewerbungs.frage@muster.com" />
-        </mat-form-field>
+        <h4>*Kontaktperson(en):</h4>
+        <form class="contactPerson">
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="stage.stageContactName" name="stageContactName" placeholder="Maria Muster" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Telefon</mat-label>
+                <input matInput [(ngModel)]="stage.stageContactTel" name="stageContactTel" placeholder="+41 79 333 .. .." />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="stage.stageContactEmail" name="stageContactEmail" placeholder="bewerbungs.frage@muster.com" />
+            </mat-form-field>
+            <button mat-stroked-button color="accent">Kontaktperson entfernen</button>
+        </form>
+        <button mat-stroked-button color="primary">Kontaktperson hinzufügen</button>
         <mat-form-field class="example-full-width">
             <mat-label>*Stage Bewerbungs Adresse</mat-label>
             <input matInput [(ngModel)]="stage.stageApplyConatct" name="stageApplyConatct" placeholder="nachwuchs@muster.ch" />
