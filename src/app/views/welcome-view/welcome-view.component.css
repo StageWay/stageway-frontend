@@ -81,7 +81,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .info-img {
@@ -106,4 +105,9 @@ hr {
 h3 {
     text-align: center;
     margin-top: 0%;
+}
+
+.flex-field-partners area {
+    cursor: default;
+    outline: none;
 }
