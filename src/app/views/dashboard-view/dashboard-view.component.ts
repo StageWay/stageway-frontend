@@ -33,7 +33,14 @@ export class DashboardViewComponent implements OnInit {
 
     var dialog = this.dialog.open(StageCreateDialogComponent, dialogConfig);
     dialog.afterClosed().subscribe(stage => {
-      this.createStage(stage)
+      if(stage != null){
+        console.log(stage.stageTitle);
+        if (this.validateStage(stage) == true){
+          this.createStage(stage);
+        }
+      } else {
+        console.log("Fehler");
+      }
     })
   }
 
@@ -42,6 +49,7 @@ export class DashboardViewComponent implements OnInit {
       location.reload();
     }, (error) => {                              
       console.log('error caught in component');
+      console.log(error);
       const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
@@ -49,5 +57,23 @@ export class DashboardViewComponent implements OnInit {
       this.dialog.open(StageErrorDialogComponent, dialogConfig);
     })
 }
+
+validateStage(stage: StageDetailModel): boolean{
+  if(stage.stageTitle != undefined ||
+    stage.stageSubtitle != undefined ||
+    stage.stageSummary != undefined ||
+    stage.stageTasks != undefined ||
+    stage.stageProfile != undefined ||
+    stage.stageBenefits != undefined ||
+    stage.stageCompany != undefined ||
+    stage.stageLocation != undefined ||
+    stage.stageContactEmail != undefined ||
+    stage.stageApplyConatct != undefined ) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
 
 }
