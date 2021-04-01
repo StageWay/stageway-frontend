@@ -29,6 +29,12 @@ constructor(private http:HttpClient, private auth: AuthService) { }
     return this.http.get<StageDetailModel[]>(this.APIUrl+'/Stages', {headers: headers});
   }
 
+  getStage(stageId): Observable<StageDetailModel> {
+    this.prepareToken()
+    const headers = { 'content-type': 'application/json', 'Authorization': this.token}  
+    return this.http.get<StageDetailModel>(this.APIUrl+'/Stages/' + stageId, {headers: headers});
+  }
+
   postStage(stage:StageDetailModel): Observable<any> {
     this.prepareToken()
     const headers = { 'content-type': 'application/json', 'Authorization': this.token}  
