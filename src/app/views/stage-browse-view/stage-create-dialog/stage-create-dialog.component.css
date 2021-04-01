@@ -18,3 +18,13 @@
     font-size: 70%;
     font-weight: lighter;
 }
+
+.contactPerson {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.contactPerson h4 {
+    margin: 0;
+    padding: 0;
+}
