@@ -28,10 +28,21 @@ export class StageBrowseViewComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
+    this.openStageOnLoad()
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
       this.userId = data["sub"]
     }) 
+  }
+
+  openStageOnLoad() {
+    let search_params = new URL(location.href).searchParams;
+    var stageId = search_params.get('stage');
+    if(stageId != null) {
+      this.service.getStage(stageId).subscribe(item => {
+        this.openStageDetailDialog(item)
+      })
+    }
   }
 
   loadData(){
@@ -52,14 +63,21 @@ export class StageBrowseViewComponent implements OnInit {
   openStageDetailDialog(item: StageDetailModel) {
     if (this.editing || this.deleting) return;
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.closeOnNavigation = true;
     dialogConfig.width = "70vw";
     dialogConfig.data = { stageItem: item };
-
-    this.dialog.open(StageDetailDialogComponent, dialogConfig);
-
+    var oldHref = location.href;
+    if(oldHref.includes("?stage=")) {
+      oldHref = oldHref.split("?stage=")[0];
+    } else {
+      history.pushState({}, null, oldHref + "?stage=" + item.stageId);
+    }
+    var dialog = this.dialog.open(StageDetailDialogComponent, dialogConfig);
+    dialog.afterClosed().subscribe(data => {
+      history.pushState({}, null, oldHref);
+    })
   }
 
   async deleteStage(item: StageDetailModel) {
