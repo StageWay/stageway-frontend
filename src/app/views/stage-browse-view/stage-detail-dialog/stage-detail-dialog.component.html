@@ -20,9 +20,12 @@
             <p class="location-lable">{{stageLocation}}</p>
             <p class="stage-startDate-lable">Start ab: {{stageDate | date:'yyyy-MM-dd'}}</p>
             <h3>Fragen?</h3>
-            <p class="contact-name-lable">{{stageContactName}}</p>
-            <p class="contact-tel-lable">{{stageContactTel}}</p>
-            <p class="contact-mail-lable">{{stageContactEmail}}</p>
+            <div *ngFor="let person of contactPersons">
+                <p class="contact-name-lable">{{person.name}}</p>
+                <p class="contact-tel-lable">{{person.tel}}</p>
+                <p class="contact-mail-lable">{{person.email}}</p>
+                <p></p>
+            </div>
             <h3>Coaching</h3>
             <p class="coching-describtion-lable">Entdecke das <a [routerLink]="['/coaching']" mat-dialog-close>Coaching Angebot</a> der Stadt Zürich.
             </p>
