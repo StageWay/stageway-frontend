@@ -5,6 +5,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { StageCreateDialogComponent } from '../stage-browse-view/stage-create-dialog/stage-create-dialog.component';
 import { AuthService } from '@auth0/auth0-angular';
 import { StageErrorDialogComponent } from '../stage-browse-view/stage-error-dialog/stage-error-dialog.component';
+import { StageLoadingDialogComponent } from '../stage-browse-view/stage-loading-dialog/stage-loading-dialog.component';
 
 @Component({
   selector: 'app-dashboard-view',
@@ -45,9 +46,15 @@ export class DashboardViewComponent implements OnInit {
   }
 
   createStage(stage: StageDetailModel) {
+    const dialogLoadingConfig = new MatDialogConfig();
+    dialogLoadingConfig.disableClose = false;
+    dialogLoadingConfig.autoFocus = true;
+    var loadingDialog = this.dialog.open(StageLoadingDialogComponent, dialogLoadingConfig);
     this.stageService.postStage(stage).subscribe(data => {
       location.reload();
-    }, (error) => {                              
+      loadingDialog.close();
+    }, (error) => {   
+      loadingDialog.close();                           
       console.log('error caught in component');
       console.log(error);
       const dialogConfig = new MatDialogConfig();
