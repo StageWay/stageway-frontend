@@ -12,8 +12,10 @@
     margin-bottom: 50px;
     position: relative;
     display: flex;
-    justify-content: center;
     flex-direction: row;
+    justify-content: center;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .container .card .face {
@@ -74,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 50px;
     box-sizing: border-box;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     transform: translateY(-280px);
@@ -110,11 +112,21 @@ li {
     color: #111D4A;
 }
 
+hr {
+    width: 32vw;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0%;
+}
+
 button {
     background-color: #0A7085;
     color: white;
     font-size: large;
     margin-top: 10px;
+    margin-right: 4px;
 }
 
 .read-more-container {
@@ -127,36 +139,85 @@ button {
 
 .read-more-first {
     flex-direction: column;
-    margin-right: 18%;
-    margin-left: 18%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-align: justify;
 }
 
 .read-more-second {
     flex-direction: column;
-    margin-right: 18%;
-    margin-left: 18%;
-    margin-top: 52px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-align: justify;
 }
 
 .read-more-third {
     flex-direction: column;
-    margin-right: 18%;
-    margin-left: 18%;
-    margin-top: 52px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-align: justify;
     width: 64%;
 }
 
-hr {
-    width: 32vw;
-}
+.read-more-fourth{
+    flex-direction: column;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: justify;
+}  
 
-h3 {
-    text-align: center;
-    margin-top: 0%;
+/**/
+@media screen and (max-width: 650px){
+        
+    .read-more-container {
+        display: flex;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 80px;
+        width: calc(100% - 50px);
+    }
+
+    .read-more-first {
+        flex-direction: column;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: justify;
+    }
+
+    .read-more-second {
+        flex-direction: column;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: justify;
+    }
+
+    .read-more-third {
+        flex-direction: column;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: justify;
+    }
+
+    .read-more-fourth{
+        flex-direction: column;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: center;
+    } 
 }

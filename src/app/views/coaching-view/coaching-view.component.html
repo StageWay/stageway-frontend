@@ -15,8 +15,8 @@
             <div class="content">
                 <p>Du bist unsicher, welche Stages für dich in Frage kommen oder du hast konkrete Fragen zu deiner Bewerbung für eine Stage.</p>
                 <br/>
-                <p>Vereinbare deinen ersten Coaching-Termin unter 044 412 78 88 oder schreibe ein Mail mit deinen Kontaktangaben an jobplus@zuerich.ch und wir melden uns bei dir.</p>
                 <button mat-raised-button (click)="scrollToElement(readMoreFirst)">Mehr Informationen</button>
+                <button mat-raised-button (click)="scrollToElement(readMoreFourth)">Kontakt</button>
             </div>
         </div>
     </div>
@@ -33,8 +33,8 @@
             <div class="content">
                 <p>Du möchtest mit deinem Coach besprechen, wie es in der Stage läuft und wie es nach diesem Einsatz beruflich bei dir weitergehen soll. Auch für all deine Fragen rund ums Thema Stellensuche hast du einen kompetenten Ansprechpartner.</p>
                 <br/>
-                <p>Wende dich für deinen Coaching-Termin an 044 412 78 88 oder schreibe ein Mail mit deinen Kontaktangaben an jobplus@zuerich.ch und wir melden uns bei dir.</p>
                 <button mat-raised-button (click)="scrollToElement(readMoreSecond)">Mehr Informationen</button>
+                <button mat-raised-button (click)="scrollToElement(readMoreFourth)">Kontakt</button>
             </div>
         </div>
     </div>
@@ -49,13 +49,13 @@
             <div class="content">
                 <p>Du hast noch keine Festanstellung gefunden oder möchtest auch während der Probezeit von der dir vertrauten Beratungsperson weiter unterstützt werden.</p>
                 <br/>
-                <p>Wende dich für deinen Coaching-Termin an 044 412 78 88 oder schreibe ein Mail mit deinen Kontaktangaben an jobplus@zuerich.ch und wir melden uns bei dir.</p>
                 <button mat-raised-button (click)="scrollToElement(readMoreThird)">Mehr Informationen</button>
+                <button mat-raised-button (click)="scrollToElement(readMoreFourth)">Kontakt</button>
             </div>
         </div>
     </div>
 </div>
-
+<!--________________________________________________________________________________________-->
 <div class="read-more-container">
     <div #readMoreFirst class="read-more-first">
         <h3>Vor der Stage</h3>
@@ -110,4 +110,13 @@
             <li>Wenn du in eine Festanstellung übertrittst: Nachbetreuung während der Probezeit (falls gewünscht)</li>
         </ul>
     </div>
+</div>
+<hr>
+<div class="read-more-container">
+    <div #readMoreFourth class="read-more-fourth">
+        <h3>Kontakt</h3>
+        <p>Wende dich für deinen CoachingTermin an <u>044 412 78 88</u> oder schreibe ein Mail mit deinen Kontaktangaben an <u>jobplus@zuerich.ch</u> und wir melden uns bei dir.</p>
+        <a style="background-color: #0A7085; color: white; margin: 4px;" mat-raised-button href="tel:044 412 78 88">Rufe An</a>
+        <a style="background-color: #0A7085; color: white;"  mat-raised-button href="mailto:jobplus@zuerich.ch">E-Mail</a>
+    </div>
 </div>
