@@ -3,8 +3,9 @@
     <p>Als Teilnehmer*in von StageWay hast du die Möglichkeit, von einem breiten Coaching-Angebot der Stadt Zürich zu profitieren. Dieses Coaching ist modular aufgebaut und wird auf dich und deine Bedürfnisse zugeschnitten. Dein Coach steht dir von der Bewerbungsphase
         bis hin zu deiner potentiellen Festanstellung – auf Wunsch auch danach – mit Rat und Tat zur Seite.</p>
 </div>
+
 <div class="container">
-    <div class="card">
+    <div (touchstart)="swipeStart($event)" (touchend)="swipeEnd($event,1)" id="card1" class="card fade">
         <div class="face face1">
             <div class="content">
                 <img src="/assets/images/coaching_illu_1.png" height="85" width="85">
@@ -20,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    <div (touchstart)="swipeStart($event)" (touchend)="swipeEnd($event,2)" id="card2" class="card fade">
         <div class="face face1">
             <div class="content">
                 <div class="image2">
@@ -38,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    <div (touchstart)="swipeStart($event)" (touchend)="swipeEnd($event,3)" id="card3" class="card fade">
         <div class="face face1">
             <div class="content">
                 <img src="/assets/images/coaching_illu_3.png" height="85" width="85">
@@ -55,7 +56,15 @@
         </div>
     </div>
 </div>
+<br>
+<div class="dots" style="text-align:center">
+  <span id="dot1" class="dot" (click)="changeSlide(1)">1</span> 
+  <span id="dot2" class="dot" (click)="changeSlide(2)">2</span> 
+  <span id="dot3" class="dot" (click)="changeSlide(3)">3</span> 
+</div>
+
 <!--________________________________________________________________________________________-->
+
 <div class="read-more-container">
     <div #readMoreFirst class="read-more-first">
         <h3>Vor der Stage</h3>
@@ -112,11 +121,11 @@
     </div>
 </div>
 <hr>
-<div class="read-more-container">
-    <div #readMoreFourth class="read-more-fourth">
-        <h3>Kontakt</h3>
+<div class="read-more-container">
+    <div #readMoreFourth class="read-more-fourth">
+        <h3>Kontakt</h3>
         <p>Wende dich für deinen CoachingTermin an <u>044 412 78 88</u> oder schreibe ein Mail mit deinen Kontaktangaben an <u>jobplus@zuerich.ch</u> und wir melden uns bei dir.</p>
         <a style="background-color: #0A7085; color: white; margin: 4px;" mat-raised-button href="tel:044 412 78 88">Rufe An</a>
-        <a style="background-color: #0A7085; color: white;"  mat-raised-button href="mailto:jobplus@zuerich.ch">E-Mail</a>
-    </div>
+        <a style="background-color: #0A7085; color: white;"  mat-raised-button href="mailto:jobplus@zuerich.ch">E-Mail</a> 
+    </div>
 </div>
