@@ -46,4 +46,5 @@ button:hover {
 
 .logo-img {
     cursor: pointer;
+    outline: none;
 }

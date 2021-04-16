@@ -58,7 +58,6 @@ export class CoachingViewComponent implements OnInit {
       }else {
         this.changeSlide(currentCard - 1)
       }
-
     }
   }
 
