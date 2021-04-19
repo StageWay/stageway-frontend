@@ -43,14 +43,14 @@ export class CoachingViewComponent implements OnInit {
 
   swipeSlide(currentCard: number){
     var distance = this.slideXend - this.slideXstart;
-    if (distance < 100) {
+    if (distance < -100) {
       if (currentCard == 3) {
         this.changeSlide(1);
       }else {
         this.changeSlide(currentCard + 1)
       }
 
-    }else if (distance > -100) {
+    }else if (distance > 100) {
       if (currentCard == 1) {
         this.changeSlide(3);
       }else {
