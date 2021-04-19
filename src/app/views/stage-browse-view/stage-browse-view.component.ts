@@ -1,3 +1,4 @@
+import { StageLoadingDialogComponent } from './stage-loading-dialog/stage-loading-dialog.component';
 import { StageCreateDialogComponent } from './stage-create-dialog/stage-create-dialog.component';
 import { StageDeleteDialogComponent } from './stage-delete-dialog/stage-delete-dialog.component';
 import { AuthService } from '@auth0/auth0-angular';
@@ -7,6 +8,8 @@ import { StageDetailDialogComponent } from './stage-detail-dialog/stage-detail-d
 import { StageService } from './stage.service';
 import { StageDetailModel } from "./stage-detail-model";
 import { HttpClient } from '@angular/common/http';
+import { HostListener } from '@angular/core';
+import { StageErrorDialogComponent } from './stage-error-dialog/stage-error-dialog.component';
 
 
 @Component({
@@ -27,10 +30,21 @@ export class StageBrowseViewComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
+    this.openStageOnLoad()
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
       this.userId = data["sub"]
-    })
+    }) 
+  }
+
+  openStageOnLoad() {
+    let search_params = new URL(location.href).searchParams;
+    var stageId = search_params.get('stage');
+    if(stageId != null) {
+      this.service.getStage(stageId).subscribe(item => {
+        this.openStageDetailDialog(item)
+      })
+    }
   }
 
   loadData(){
@@ -51,14 +65,21 @@ export class StageBrowseViewComponent implements OnInit {
   openStageDetailDialog(item: StageDetailModel) {
     if (this.editing || this.deleting) return;
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.closeOnNavigation = true;
     dialogConfig.width = "70vw";
     dialogConfig.data = { stageItem: item };
-
-    this.dialog.open(StageDetailDialogComponent, dialogConfig);
-
+    var oldHref = location.href;
+    if(oldHref.includes("?stage=")) {
+      oldHref = oldHref.split("?stage=")[0];
+    } else {
+      history.pushState({}, null, oldHref + "?stage=" + item.stageId);
+    }
+    var dialog = this.dialog.open(StageDetailDialogComponent, dialogConfig);
+    dialog.afterClosed().subscribe(data => {
+      history.pushState({}, null, oldHref);
+    })
   }
 
   async deleteStage(item: StageDetailModel) {
@@ -66,8 +87,15 @@ export class StageBrowseViewComponent implements OnInit {
     dialog.afterClosed().subscribe(data => {
       this.toggleDelete()
       if(data == true) {
+
+        const dialogLoadingConfig = new MatDialogConfig();
+        dialogLoadingConfig.disableClose = false;
+        dialogLoadingConfig.autoFocus = true;
+        var loadingDialog = this.dialog.open(StageLoadingDialogComponent, dialogLoadingConfig);
+
         this.service.deleteStage(item.stageId).subscribe(() => {
           this.loadData();
+          loadingDialog.close();
         }); 
       }
     })
@@ -77,14 +105,35 @@ export class StageBrowseViewComponent implements OnInit {
   async editStage(item: StageDetailModel) {
     const dialogConfig = new MatDialogConfig();
  
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.data =  item
 
     var dialog = this.dialog.open(StageCreateDialogComponent, dialogConfig);
     dialog.afterClosed().subscribe(stage => {
       this.toggleEdit();
-      this.service.putStage(stage).subscribe();
+      if(stage != null && stage.stageTitle != null) {
+
+        const dialogLoadingConfig = new MatDialogConfig();
+
+        dialogLoadingConfig.disableClose = false;
+        dialogLoadingConfig.autoFocus = true;
+
+        var loadingDialog = this.dialog.open(StageLoadingDialogComponent, dialogLoadingConfig);
+
+        this.service.putStage(stage).subscribe(data => {
+          loadingDialog.close();
+        }, (error) => {   
+          loadingDialog.close();                           
+          console.log('error caught in component');
+          console.log(error);
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.disableClose = true;
+          dialogConfig.autoFocus = true;
+    
+          this.dialog.open(StageErrorDialogComponent, dialogConfig);
+        });
+      }
     })
   }
 
@@ -98,4 +147,25 @@ export class StageBrowseViewComponent implements OnInit {
     }
     return stage.stageOwner == this.userId;
   }
+
+  resize(): boolean {
+    var width = window.innerWidth - 100;
+    var columnNumber = width / 500;
+    var columns = ""
+    for (let index = 0; index < columnNumber; index++) {
+      columns = columns + " 1fr"
+    }
+    document.getElementById("stage-container").style.setProperty("grid-template-columns", columns)
+    return true;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resize();
+  }
+
+  getMultilineString(orig: string): string {
+    return orig.replace(/\n/gi, " <br> ");
+  }
+
 }

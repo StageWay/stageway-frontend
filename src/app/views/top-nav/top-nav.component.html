@@ -1,50 +1,42 @@
 <mat-toolbar fxLayout="row">
-    <span id="logo" fxFlex [routerLink]="['/welcome']">
-    <img class="logo-img" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
+    <span id="logo" fxFlex>
+        <img class="logo-img" [routerLink]="['/welcome']" src="/assets/images/Logo-StageWay-Weiss-Bold-kurz.png" alt="Logo Image" width="260" height="88">
     </span>
     <span class="menu-item-buttons">
-    <button id="navItem" mat-button fxHide.xs [routerLink]="['/stages']">
-        Stages
-    </button>
-    <button id="navItem" mat-button fxHide.xs [routerLink]="['/guide']">
-        So funktioniert's
-    </button>
-    <button id="navItem" mat-button fxHide.xs [routerLink]="['/coaching']">
-        Coaching 
-    </button>
-    <button id="navItem" class="profileIcon" mat-icon-button fxHide.xs [matMenuTriggerFor]="menuProfile">
-        <mat-icon class="icon">account_circle</mat-icon>
-    </button>
-    <mat-menu #menuProfile="matMenu">
-        <button mat-menu-item *ngIf="auth.user$ | async as user">Hallo {{user.nickname}}</button>
-        <button mat-menu-item (click)="auth.loginWithRedirect()" *ngIf="!(auth.isAuthenticated$ | async)">Einloggen</button>
-        <button mat-menu-item (click)="auth.logout()" *ngIf="auth.isAuthenticated$ | async">Ausloggen</button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
-        <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #dropMenu="matMenu">
-        <ng-container>
-            <button mat-button fxHide.xs [routerLink]="['/stages']">
-                <mat-icon class="icon">home</mat-icon>
-                Dashboard
-            </button>
-            <mat-divider></mat-divider>
-            <button mat-button fxHide.xs [routerLink]="['']">
-                <mat-icon class="icon">face</mat-icon>
-                Profile
-            </button>
-            <mat-divider></mat-divider>
-            <button mat-button fxHide.xs [routerLink]="['']">
-                <mat-icon class="icon">live_help</mat-icon>
-                Guide
-            </button>
-            <mat-divider></mat-divider>
-            <button mat-button fxHide.xs [routerLink]="['/welcome']">
-                <mat-icon class="icon">login</mat-icon>
-                login
-            </button>
-        </ng-container>
-    </mat-menu>
+        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/stages']">
+            Stages
+        </button>
+        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/guide']">
+            So funktioniert's
+        </button>
+        <button id="navItem" mat-button fxHide.sm fxHide.xs fxHide.md [routerLink]="['/coaching']">
+            Coaching 
+        </button>
+        <button id="navItem" class="profileIcon" mat-icon-button fxHide.sm fxHide.xs fxHide.md [matMenuTriggerFor]="menuProfile">
+            <mat-icon class="icon">account_circle</mat-icon>
+        </button>
+        <mat-menu #menuProfile="matMenu">
+            <button mat-menu-item *ngIf="auth.user$ | async as user">Hallo {{user.nickname}}</button>
+            <button mat-menu-item (click)="auth.loginWithRedirect()" *ngIf="!(auth.isAuthenticated$ | async)">Einloggen</button>
+            <button mat-menu-item (click)="auth.logout()" *ngIf="auth.isAuthenticated$ | async">Ausloggen</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxShow.sm fxShow.xs fxHide fxShow.md>
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #dropMenu="matMenu">
+            <ng-container>
+                <button mat-button fxShow.sm fxShow.xs fxHide fxShow.md [routerLink]="['/stages']">
+                    Stages
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-button fxShow.sm fxShow.xs fxHide fxShow.md [routerLink]="['/guide']">
+                    So funktioniert's
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-button fxShow.sm fxShow.xs fxHide fxShow.md [routerLink]="['/coaching']">
+                    Coaching
+                </button>
+            </ng-container>
+        </mat-menu>
     </span>
 </mat-toolbar>

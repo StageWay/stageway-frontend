@@ -1,33 +1,30 @@
-<mat-spinner *ngIf="dataIsLoading == true"></mat-spinner>
-<div class="stage-container">
-    <div fxLayout="row wrap">
-        <mat-card fxFlex="25" fxFlex.xs="50" *ngFor="let stageItem of StageList" class="example-card" (click)="openStageDetailDialog(stageItem)">
-            <mat-card-header>
-                <!-- <div mat-card-avatar class="example-header-image"></div> -->
-                <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
-                <mat-card-subtitle>{{stageItem.stageSubtitle}}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="{{stageItem.stageImage || '/assets/images/default_stage_image.png'}}">
-            <mat-card-content>
-                <p>
-                    {{stageItem.stageSummary}}
-                </p>
-                <p class="location-lable">
-                    Standort: {{stageItem.stageLocation}}
-                </p>
-                <p class="stage-startDate-lable">
-                    Start Datum: {{stageItem.stageDate | date:'yyyy-MM-dd'}}
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>Erfahre mehr ></button>
-                <button *ngIf="isOwner(stageItem)" mat-button class="stage-admin-btn" (click)="toggleDelete(); deleteStage(stageItem)">
-                    <mat-icon>delete</mat-icon>
-                </button>
-                <button *ngIf="isOwner(stageItem)" mat-button class="stage-admin-btn" (click)="toggleEdit(); editStage(stageItem)">
-                    <mat-icon>edit</mat-icon>
-                </button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
+<mat-spinner *ngIf="dataIsLoading"></mat-spinner>
+<div id="stage-container">
+    <mat-card *ngFor="let stageItem of StageList" class="example-card" (click)="openStageDetailDialog(stageItem)">
+        <mat-card-header *ngIf="resize()">
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
+            <mat-card-subtitle>{{stageItem.stageSubtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{stageItem.stageImage || '/assets/images/default_stage_image.png'}}">
+        <mat-card-content>
+            <p [innerHtml]="getMultilineString(stageItem.stageSummary)">
+            </p>
+            <p class="location-lable">
+                Standort: {{stageItem.stageLocation}}
+            </p>
+            <p class="stage-startDate-lable">
+                Start Datum: {{stageItem.stageDate | date:'yyyy-MM-dd'}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>Erfahre mehr ></button>
+            <button *ngIf="isOwner(stageItem)" mat-button class="stage-admin-btn" (click)="toggleDelete(); deleteStage(stageItem)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button *ngIf="isOwner(stageItem)" mat-button class="stage-admin-btn" (click)="toggleEdit(); editStage(stageItem)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
 </div>

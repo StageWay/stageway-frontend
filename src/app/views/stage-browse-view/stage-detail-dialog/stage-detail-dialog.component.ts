@@ -4,6 +4,7 @@ import { CoachingViewComponent } from '../../coaching-view/coaching-view.compone
 import { StageDetailModel } from "../../stage-browse-view/stage-detail-model";
 import { StageService } from '../stage.service';
 import { DatePipe } from '@angular/common'
+import { ContactPerson } from '../stage-create-dialog/stage-create-dialog.component';
 
 
 @Component({
@@ -16,9 +17,36 @@ export class StageDetailDialogComponent implements OnInit {
 
   private initStage: StageDetailModel;
   private datepipe: DatePipe;
+  contactPersons: ContactPerson[] = []
 
   constructor(private service: StageService, private dialogRef: MatDialogRef<any> , @Inject(MAT_DIALOG_DATA) data: {stageItem: StageDetailModel}) {
     this.initStage = data.stageItem;
+    if(typeof this.initStage.stageContactName !== 'undefined') {
+      if(this.initStage.stageContactName.includes(";")) {
+        var names = this.initStage.stageContactName.split(";");
+        var emails = this.initStage.stageContactEmail.split(";");
+        var tels = this.initStage.stageContactTel.split(";");
+        for (let index = 0; index < names.length; index++) {
+          this.contactPersons.push({
+            name: names[index],
+            tel: tels[index],
+            email: emails[index],
+          })
+        }
+      } else {
+        this.contactPersons.push({
+          name: this.initStage.stageContactName,
+          tel: this.initStage.stageContactTel,
+          email: this.initStage.stageContactEmail,
+        })
+      }
+    } else {
+      this.contactPersons.push({
+        name: "",
+        tel: "",
+        email: "",
+      })
+    }
    }
 
   @Input()
@@ -54,6 +82,10 @@ export class StageDetailDialogComponent implements OnInit {
     this.stageContactTel = this.initStage.stageContactTel;
     this.stageApplyConatct = this.initStage.stageApplyConatct;
 
+  }
+
+  getMultilineString(orig: string): string {
+    return orig.replace(/\n/gi, " <br> ");
   }
 
 }
