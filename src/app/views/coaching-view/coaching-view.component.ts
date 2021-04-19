@@ -27,7 +27,7 @@ export class CoachingViewComponent implements OnInit {
     this.card1 = document.getElementById("card1")
     this.card2 = document.getElementById("card2")
     this.card3 = document.getElementById("card3")
-
+    document.getElementById("dot1").style.backgroundColor = "#accade"
     this.resize();
   }
 
@@ -43,16 +43,14 @@ export class CoachingViewComponent implements OnInit {
 
   swipeSlide(currentCard: number){
     var distance = this.slideXend - this.slideXstart;
-    if (distance > 100) {
-      console.log("right");
+    if (distance < 100) {
       if (currentCard == 3) {
         this.changeSlide(1);
       }else {
         this.changeSlide(currentCard + 1)
       }
 
-    }else if (distance < -100) {
-      console.log("left");
+    }else if (distance > -100) {
       if (currentCard == 1) {
         this.changeSlide(3);
       }else {
@@ -95,18 +93,29 @@ export class CoachingViewComponent implements OnInit {
   }
 
   changeSlide(n){
+      var dot1 = document.getElementById("dot1");
+      var dot2 = document.getElementById("dot2");
+      var dot3 = document.getElementById("dot3");
+
+      dot1.style.backgroundColor = "#dddddd"
+      dot2.style.backgroundColor = "#dddddd"
+      dot3.style.backgroundColor = "#dddddd"
+
 
       if (n == 1){
+        dot1.style.backgroundColor = "#accade"
         this.card1.style.display = "flex";  
         this.card2.style.display = "none"; 
         this.card3.style.display = "none";
       }
       if (n == 2) {
+        dot2.style.backgroundColor = "#accade"
         this.card1.style.display = "none";  
         this.card2.style.display = "flex"; 
         this.card3.style.display = "none";
       }
       if (n == 3) {
+        dot3.style.backgroundColor = "#accade"
         this.card1.style.display = "none";  
         this.card2.style.display = "none"; 
         this.card3.style.display = "flex";
