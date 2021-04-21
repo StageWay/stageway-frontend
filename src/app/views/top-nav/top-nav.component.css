@@ -48,3 +48,8 @@ button:hover {
     cursor: pointer;
     outline: none;
 }
+
+.mat-icon-button .mat-icon {
+    margin-top: 7px;
+    margin-right: 15px;
+}
