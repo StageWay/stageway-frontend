@@ -15,8 +15,8 @@
 }
 
 .flex-field-left {
-    margin-top: -1px;
     color: #ffffff !important;
+    height: fit-content;
 }
 
 .flex-container-top>.flex-field-left {
@@ -139,6 +139,10 @@ hr {
 h3 {
     text-align: center;
     margin-top: 0%;
+}
+.partner-img {
+    width: 200px;
+    margin-bottom: 20px;
 }
 /*________________________________________________*/
 
