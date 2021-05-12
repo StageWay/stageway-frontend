@@ -25,14 +25,25 @@ export class StageBrowseViewComponent implements OnInit {
   private editing = false;
   private deleting = false;
   private userId:string;
+  search:string = '';
+  date:string;
 
   ngOnInit() {
+    this.date = new Date().toISOString().split('T')[0];
     this.loadData();
     this.openStageOnLoad()
     this.auth.idTokenClaims$.subscribe(data => {
       this.isAdmin = data["http://stageway.com/roles"][0] == "admin"
       this.userId = data["sub"]
-    }) 
+    })
+  }
+
+  filteredStage() {
+    return this.StageList.filter(stage => {
+      var today = Date.parse(this.date);
+      var d2 = Date.parse(stage.stageDate.toString());
+      return `${stage.stageTitle} ${stage.stageSubtitle}`.toLocaleLowerCase().match(this.search.toLocaleLowerCase()) && (today < d2);
+    });
   }
 
   openStageOnLoad() {

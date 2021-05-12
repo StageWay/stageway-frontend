@@ -1,3 +1,24 @@
+#filter-container {
+    text-align: left;
+    margin: 30px 0px -20px 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+#search-stages {
+    border: none;
+    outline: none;
+    font-size: large;
+    width: 180px;
+}
+
+#date-stages {
+    width: 140px;
+    outline: none;
+    border: none;
+    font-size: large;
+}
+
 #stage-container {
     margin-left: 50px;
     margin-right: 50px;
@@ -53,16 +74,18 @@ mat-spinner {
     margin-top: 10px;
 }
 
-mat-card{
-    display:flex;
+mat-card {
+    display: flex;
     flex-direction: column;
     width: calc(100% - 64px);
     margin-left: 16px;
-  }
+}
+
 mat-card-header {
     flex-shrink: 0;
-  }
-mat-card-content{
+}
+
+mat-card-content {
     flex-grow: 1;
     overflow: auto;
-  }
+}
