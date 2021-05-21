@@ -31,4 +31,20 @@ export class TopNavComponent implements OnInit {
     }
   }
 
+  mouseOverLockOpen(){
+    this.document.getElementById("open-lock")["src"] = "../../../assets/images/lock_open_hover.png";
+  }
+
+  mouseOverLockClosed() {
+    this.document.getElementById("closed-lock")["src"] = "../../../assets/images/lock_closed_hover.png";
+  }
+  
+  mouseLeaveLockOpen(){
+    this.document.getElementById("open-lock")["src"] = "../../../assets/images/lock_open.png";
+  }
+
+  mouseLeaveLockClosed() {
+    this.document.getElementById("closed-lock")["src"] = "../../../assets/images/lock_closed.png";
+  }
+
 }
