@@ -13,7 +13,8 @@
             Coaching 
         </button>
         <button id="navItem" class="profileIcon" mat-icon-button fxHide.sm fxHide.xs fxHide.md [matMenuTriggerFor]="menuProfile">
-            <mat-icon class="icon">account_circle</mat-icon>
+            <img id="closed-lock" class="lock-img" (mouseover)="mouseOverLockClosed()" (mouseleave)="mouseLeaveLockClosed()" src="../../../assets/images/lock_closed.png" alt="Account" *ngIf="!(auth.isAuthenticated$ | async)">
+            <img id="open-lock" class="lock-img" (mouseover)="mouseOverLockOpen()" (mouseleave)="mouseLeaveLockOpen()" src="../../../assets/images/lock_open.png" alt="Account" *ngIf="auth.isAuthenticated$ | async">
         </button>
         <mat-menu #menuProfile="matMenu">
             <button mat-menu-item *ngIf="auth.user$ | async as user">Hallo {{user.nickname}}</button>
