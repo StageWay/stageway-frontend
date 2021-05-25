@@ -13,6 +13,7 @@
     margin-bottom: 50px;
     box-shadow: -3px 6px 6px 0px rgba(176, 164, 176, 1);
     transition: all .3s ease-in-out;
+    overflow-y: hidden;
 }
 
 .example-card:hover {
@@ -53,16 +54,18 @@ mat-spinner {
     margin-top: 10px;
 }
 
-mat-card{
-    display:flex;
+mat-card {
+    display: flex;
     flex-direction: column;
     width: calc(100% - 64px);
     margin-left: 16px;
-  }
+}
+
 mat-card-header {
     flex-shrink: 0;
-  }
-mat-card-content{
+}
+
+mat-card-content {
     flex-grow: 1;
     overflow: auto;
-  }
+}
