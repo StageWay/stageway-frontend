@@ -1,6 +1,13 @@
-<mat-spinner *ngIf="dataIsLoading"></mat-spinner>
+<div id="filter-container">
+    <input id="search-stages" placeholder="Search Stages" [(ngModel)]="search" />
+    <input id="date-stages" matInput type="date" [(ngModel)]="date" placeholder="2021.01.01" />
+</div>
+
+
+<mat-spinner *ngIf="dataIsLoading">
+</mat-spinner>
 <div id="stage-container">
-    <mat-card *ngFor="let stageItem of StageList" class="example-card" (click)="openStageDetailDialog(stageItem)">
+    <mat-card *ngFor="let stageItem of filteredStage()" class="example-card" (click)="openStageDetailDialog(stageItem)">
         <mat-card-header *ngIf="resize()">
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
             <mat-card-title>{{stageItem.stageTitle}}</mat-card-title>
