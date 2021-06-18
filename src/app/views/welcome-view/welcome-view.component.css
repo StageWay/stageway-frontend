@@ -15,8 +15,8 @@
 }
 
 .flex-field-left {
-    margin-top: -1px;
     color: #ffffff !important;
+    height: fit-content;
 }
 
 .flex-container-top>.flex-field-left {
@@ -92,13 +92,19 @@
 }
 
 .info-img {
-    display: none;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.info-img1{
+.partner-img-desktop{
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-img-mobile {
+    display: none;
     margin-left: auto;
     margin-right: auto;
 }
@@ -110,8 +116,16 @@
 
 .flex-field-partners img {
     flex-direction: vertical;
-    width: 100%;
     object-fit: cover;
+}
+
+.flex-field-partners area {
+    cursor: default;
+    outline: none;
+} 
+
+.flex-field-partners a {
+    cursor: default;
 }
 
 h2 {
@@ -125,6 +139,10 @@ hr {
 h3 {
     text-align: center;
     margin-top: 0%;
+}
+.partner-img {
+    width: 200px;
+    margin-bottom: 20px;
 }
 /*________________________________________________*/
 
@@ -195,15 +213,12 @@ h3 {
 
     .flex-field-partners img {
         width: 100%;
-        object-fit: cover;
     }
 }
 
 @media screen and (max-width: 800px) {
-    
     .flex-field-partners img {
-        width: 100%;
-        object-fit: cover;
+        width: 60%;
     }
 
     .info-img {
@@ -211,15 +226,14 @@ h3 {
         margin-left: auto;
         margin-right: auto;
     }
-    
-    .info-img1{
-        display: none;
-    }
-}
 
-@media screen and (min-width: 1360px){
-    .flex-field-partners img {
-        width: 70%;
-        object-fit: cover;
+    .partner-img-mobile {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .partner-img-desktop{
+        display: none;
     }
 }

@@ -37,6 +37,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { StageErrorDialogComponent } from './views/stage-browse-view/stage-error-dialog/stage-error-dialog.component';
+import { StageLoadingDialogComponent } from './views/stage-browse-view/stage-loading-dialog/stage-loading-dialog.component';
+import { IeWarningDialogComponent } from './views/top-nav/ie-warning-dialog/ie-warning-dialog.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { StageErrorDialogComponent } from './views/stage-browse-view/stage-error
     routingComponents,
     CoachingViewComponent,
     StageDeleteDialogComponent,
-    StageErrorDialogComponent
+    StageErrorDialogComponent,
+    StageLoadingDialogComponent,
+    IeWarningDialogComponent
    ],
    
   imports: [

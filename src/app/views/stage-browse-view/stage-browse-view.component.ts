@@ -1,3 +1,4 @@
+import { StageLoadingDialogComponent } from './stage-loading-dialog/stage-loading-dialog.component';
 import { StageCreateDialogComponent } from './stage-create-dialog/stage-create-dialog.component';
 import { StageDeleteDialogComponent } from './stage-delete-dialog/stage-delete-dialog.component';
 import { AuthService } from '@auth0/auth0-angular';
@@ -8,6 +9,7 @@ import { StageService } from './stage.service';
 import { StageDetailModel } from "./stage-detail-model";
 import { HttpClient } from '@angular/common/http';
 import { HostListener } from '@angular/core';
+import { StageErrorDialogComponent } from './stage-error-dialog/stage-error-dialog.component';
 
 
 @Component({
@@ -96,8 +98,15 @@ export class StageBrowseViewComponent implements OnInit {
     dialog.afterClosed().subscribe(data => {
       this.toggleDelete()
       if(data == true) {
+
+        const dialogLoadingConfig = new MatDialogConfig();
+        dialogLoadingConfig.disableClose = false;
+        dialogLoadingConfig.autoFocus = true;
+        var loadingDialog = this.dialog.open(StageLoadingDialogComponent, dialogLoadingConfig);
+
         this.service.deleteStage(item.stageId).subscribe(() => {
           this.loadData();
+          loadingDialog.close();
         }); 
       }
     })
@@ -107,14 +116,35 @@ export class StageBrowseViewComponent implements OnInit {
   async editStage(item: StageDetailModel) {
     const dialogConfig = new MatDialogConfig();
  
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.data =  item
 
     var dialog = this.dialog.open(StageCreateDialogComponent, dialogConfig);
     dialog.afterClosed().subscribe(stage => {
       this.toggleEdit();
-      this.service.putStage(stage).subscribe();
+      if(stage != null && stage.stageTitle != null) {
+
+        const dialogLoadingConfig = new MatDialogConfig();
+
+        dialogLoadingConfig.disableClose = false;
+        dialogLoadingConfig.autoFocus = true;
+
+        var loadingDialog = this.dialog.open(StageLoadingDialogComponent, dialogLoadingConfig);
+
+        this.service.putStage(stage).subscribe(data => {
+          loadingDialog.close();
+        }, (error) => {   
+          loadingDialog.close();                           
+          console.log('error caught in component');
+          console.log(error);
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.disableClose = true;
+          dialogConfig.autoFocus = true;
+    
+          this.dialog.open(StageErrorDialogComponent, dialogConfig);
+        });
+      }
     })
   }
 

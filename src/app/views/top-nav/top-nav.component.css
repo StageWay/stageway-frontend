@@ -46,4 +46,14 @@ button:hover {
 
 .logo-img {
     cursor: pointer;
+    outline: none;
+}
+
+.mat-icon-button .mat-icon {
+    margin-top: 7px;
+    margin-right: 15px;
+}
+
+.lock-img {
+    height: 30px;
 }
