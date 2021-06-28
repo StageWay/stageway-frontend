@@ -31,7 +31,8 @@ export class StageBrowseViewComponent implements OnInit {
   date:string;
 
   ngOnInit() {
-    this.date = new Date().toISOString().split('T')[0];
+    //this.date = new Date().toISOString().split('T')[0];
+    this.date = new Date("1000-01-01").toISOString();
     this.loadData();
     this.openStageOnLoad()
     this.auth.idTokenClaims$.subscribe(data => {
