@@ -13,7 +13,7 @@ export const environment = {
     clientId,
     redirectUri: window.location.origin,
   },
-  baseAPIUrl: "http://localhost:9000/api"
+  baseAPIUrl: " https://stageway-api.azurewebsites.net/api"
 };
 
 /*

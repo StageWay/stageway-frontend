@@ -32,7 +32,7 @@ export class StageBrowseViewComponent implements OnInit {
 
   ngOnInit() {
     //this.date = new Date().toISOString().split('T')[0];
-    this.date = new Date("1000-01-01").toISOString();
+    this.date = new Date("2010-01-01").toISOString().split('T')[0];
     this.loadData();
     this.openStageOnLoad()
     this.auth.idTokenClaims$.subscribe(data => {
@@ -42,11 +42,16 @@ export class StageBrowseViewComponent implements OnInit {
   }
 
   filteredStage() {
+    if (this.StageList !== undefined){
     return this.StageList.filter(stage => {
       var today = Date.parse(this.date);
       var d2 = Date.parse(stage.stageDate.toString());
       return `${stage.stageTitle} ${stage.stageSubtitle}`.toLocaleLowerCase().match(this.search.toLocaleLowerCase()) && (today < d2);
     });
+  } else {
+    this.dataIsLoading = false;
+    return null
+  }
   }
 
   openStageOnLoad() {
