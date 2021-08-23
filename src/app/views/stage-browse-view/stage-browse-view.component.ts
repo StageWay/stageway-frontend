@@ -43,14 +43,18 @@ export class StageBrowseViewComponent implements OnInit {
 
   filteredStage() {
     if (this.StageList !== undefined){
-    return this.StageList.filter(stage => {
-      var today = Date.parse(this.date);
-      var d2 = Date.parse(stage.stageDate.toString());
-      return `${stage.stageTitle} ${stage.stageSubtitle}`.toLocaleLowerCase().match(this.search.toLocaleLowerCase()) && (today < d2);
-    });
+      this.dataIsLoading = true;
+      return this.StageList.filter(stage => {
+        var today = Date.parse(this.date);
+        if(stage.stageDate !== null){
+          var d2 = Date.parse(stage.stageDate.toString());
+        }
+        this.dataIsLoading = false;
+        return `${stage.stageTitle} ${stage.stageSubtitle}`.toLocaleLowerCase().match(this.search.toLocaleLowerCase()) && (today < d2);
+      });
   } else {
-    this.dataIsLoading = false;
-    return null
+      this.dataIsLoading = false;
+      return null;
   }
   }
 
